@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trends Furniture – Modern Home Furniture & Decor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#c9a84c;--gold-l:#e2c07a;--gold-d:#a07828;
+  --dark:#0f0f0e;--dark2:#181816;--dark3:#202020;--dark4:#282826;
+  --text:#ede9e1;--muted:#8a857d;--white:#fff;
+  --card:#1c1c1a;--radius:14px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:var(--gold-d);border-radius:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:18px 56px;background:rgba(15,15,14,0.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.15);transition:padding 0.3s}
+nav.scrolled{padding:12px 56px;background:rgba(15,15,14,0.97)}
+.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-badge{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:var(--gold);font-weight:700}
+.logo-name{font-size:12px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--text)}
+.logo-tag{font-size:10px;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:13px;letter-spacing:0.08em;transition:color 0.3s;position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.btn-cta{background:var(--gold);color:var(--dark);border:none;padding:10px 24px;border-radius:100px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;gap:8px}
+.btn-cta:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.3)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.35);transform:scale(1.05);animation:heroZoom 10s ease-out forwards}
+@keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,10,8,0.92) 40%,rgba(10,10,8,0.3) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 56px;max-width:680px;opacity:0;animation:fadeUp 1s 0.3s ease forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.4);padding:6px 16px;border-radius:100px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(46px,6.5vw,88px);font-weight:700;line-height:1.05;color:var(--white);margin-bottom:20px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:rgba(237,233,225,0.7);margin-bottom:44px;line-height:1.6;letter-spacing:0.03em}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--dark);border:none;padding:14px 36px;border-radius:100px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--gold-l);transform:translateY(-3px);box-shadow:0 12px 32px rgba(201,168,76,0.35)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.35);padding:14px 36px;border-radius:100px;font-family:'Jost',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.hero-stats{position:absolute;bottom:48px;left:56px;right:56px;z-index:2;display:flex;gap:48px;opacity:0;animation:fadeUp 1s 0.7s ease forwards}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold)}
+.hero-stat-label{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.hero-scroll{position:absolute;right:48px;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)}
+.scroll-line{width:1px;height:80px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollAnim 2s infinite}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:bottom}}
+.section{padding:100px 56px}
+.section-header{text-align:center;margin-bottom:64px}
+.section-tag{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--white);line-height:1.15}
+.section-sub{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--muted);margin-top:12px}
+.gold-divider{width:48px;height:2px;background:var(--gold);margin:20px auto 0;border-radius:1px}
+.cat-grid-top{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+.cat-grid-bot{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;background:var(--card);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s}
+.cat-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,0.6)}
+.cat-card-top{aspect-ratio:4/3}
+.cat-card-bot{aspect-ratio:1/1}
+.cat-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease,filter 0.4s;filter:brightness(0.65) saturate(0.85)}
+.cat-card:hover img{transform:scale(1.07);filter:brightness(0.8) saturate(1)}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.55) 100%);z-index:1}
+.cat-label-top{position:absolute;top:18px;left:0;right:0;text-align:center;z-index:2;font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,26px);font-weight:600;color:var(--white);letter-spacing:0.04em;text-shadow:0 2px 16px rgba(0,0,0,0.5)}
+.cat-label-bot{position:absolute;bottom:14px;left:0;right:0;text-align:center;z-index:2;font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--white);letter-spacing:0.04em}
+.cat-hover-btn{position:absolute;bottom:-50px;left:50%;transform:translateX(-50%);z-index:3;background:var(--gold);color:var(--dark);border:none;padding:10px 24px;border-radius:100px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:bottom 0.35s ease,box-shadow 0.3s;white-space:nowrap}
+.cat-card:hover .cat-hover-btn{bottom:16px;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.product-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,0.05);transition:transform 0.35s,box-shadow 0.35s,border-color 0.35s;cursor:pointer}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,0.5);border-color:rgba(201,168,76,0.25)}
+.product-img-wrap{position:relative;aspect-ratio:4/3;overflow:hidden}
+.product-img-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(0.8);transition:transform 0.5s,filter 0.4s}
+.product-card:hover .product-img-wrap img{transform:scale(1.06);filter:brightness(0.9)}
+.product-badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--gold);color:var(--dark);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px}
+.product-badge.new{background:#2a9d4a;color:#fff}
+.product-badge.sale{background:#c94c4c;color:#fff}
+.product-wishlist{position:absolute;top:12px;right:12px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.3s;opacity:0}
+.product-card:hover .product-wishlist{opacity:1}
+.product-wishlist:hover{background:rgba(201,168,76,0.2);color:var(--gold)}
+.product-info{padding:20px}
+.product-cat{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.product-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:6px}
+.product-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:14px}
+.product-footer{display:flex;align-items:center;justify-content:space-between}
+.product-price{font-size:20px;font-weight:600;color:var(--gold)}
+.product-price-old{font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:8px}
+.product-stars{color:var(--gold);font-size:12px;letter-spacing:2px;margin-top:10px}
+.btn-add{background:transparent;border:1px solid rgba(201,168,76,0.4);color:var(--gold);padding:8px 18px;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:0.08em;cursor:pointer;transition:all 0.3s}
+.btn-add:hover{background:var(--gold);color:var(--dark)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px}
+.price-card{border-radius:var(--radius);padding:40px 32px;border:1px solid rgba(255,255,255,0.08);background:var(--card);position:relative;overflow:hidden;transition:transform 0.35s,box-shadow 0.35s}
+.price-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,0.5)}
+.price-card.featured{border-color:var(--gold);background:linear-gradient(135deg,#1e1a0e 0%,#1c1c1a 100%)}
+.price-card.featured::before{content:'Most Popular';position:absolute;top:22px;right:-30px;background:var(--gold);color:var(--dark);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:5px 42px;transform:rotate(45deg)}
+.price-tier{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.price-amount{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--white);line-height:1}
+.price-amount sup{font-size:18px;vertical-align:top;margin-top:10px;display:inline-block}
+.price-period{font-size:13px;color:var(--muted);margin-bottom:24px}
+.price-desc{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.price-features{list-style:none;margin-bottom:36px}
+.price-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.price-features li::before{content:'✓';color:var(--gold);font-weight:700}
+.btn-price{width:100%;padding:14px;border-radius:100px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;border:1px solid var(--gold);background:transparent;color:var(--gold)}
+.price-card.featured .btn-price{background:var(--gold);color:var(--dark)}
+.btn-price:hover{background:var(--gold);color:var(--dark);transform:translateY(-2px)}
+.features-bg{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05)}
+.feat-item{background:var(--dark2);padding:48px 32px;text-align:center;transition:background 0.3s}
+.feat-item:hover{background:var(--dark3)}
+.feat-icon{width:64px;height:64px;border-radius:50%;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:26px;transition:border-color 0.3s,background 0.3s}
+.feat-item:hover .feat-icon{border-color:var(--gold);background:rgba(201,168,76,0.08)}
+.feat-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);margin-bottom:8px}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.marquee-section{padding:28px 0;overflow:hidden;border-top:1px solid rgba(201,168,76,0.12);border-bottom:1px solid rgba(201,168,76,0.12);background:rgba(201,168,76,0.03)}
+.marquee-track{display:flex;gap:64px;white-space:nowrap;animation:marquee 20s linear infinite}
+.marquee-item{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:rgba(201,168,76,0.5);letter-spacing:0.08em;flex-shrink:0}
+.marquee-dot{color:var(--gold);margin:0 8px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:var(--card);border-radius:var(--radius);padding:32px;border:1px solid rgba(255,255,255,0.05);transition:transform 0.35s,border-color 0.35s}
+.testi-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,0.2)}
+.testi-stars{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:16px}
+.testi-text{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:var(--text);line-height:1.7;margin-bottom:20px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,168,76,0.3)}
+.testi-name{font-size:14px;font-weight:500;color:var(--white)}
+.testi-loc{font-size:12px;color:var(--muted)}
+.contact-section{background:var(--dark2)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.contact-info h2{font-family:'Playfair Display',serif;font-size:40px;color:var(--white);margin-bottom:16px;margin-top:12px}
+.contact-info p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:32px}
+.contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.contact-detail-icon{width:44px;height:44px;border-radius:50%;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-detail-text{font-size:14px;color:var(--muted)}
+.contact-detail-val{font-size:15px;font-weight:500;color:var(--text)}
+.form-card{background:var(--card);border-radius:18px;padding:40px;border:1px solid rgba(255,255,255,0.07)}
+.form-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--white);margin-bottom:6px}
+.form-sub{font-size:13px;color:var(--muted);margin-bottom:28px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-group{margin-bottom:14px}
+.form-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;display:block}
+.form-input,.form-select,.form-textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:var(--text);font-family:'Jost',sans-serif;font-size:14px;font-weight:300;padding:13px 16px;transition:border-color 0.3s,background 0.3s;outline:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);background:rgba(201,168,76,0.04)}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238a857d' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;background-color:rgba(255,255,255,0.04)}
+.form-select option{background:#1c1c1a;color:var(--text)}
+.form-textarea{resize:none;height:100px}
+.btn-whatsapp{width:100%;background:#25D366;color:#fff;border:none;padding:16px;border-radius:100px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px}
+.btn-whatsapp:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,0.3)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:12px}
+.gallery-item{overflow:hidden;border-radius:10px;cursor:pointer;position:relative}
+.gallery-item:first-child{grid-column:span 2;grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;min-height:200px;display:block;transition:transform 0.5s,filter 0.4s;filter:brightness(0.8)}
+.gallery-item:hover img{transform:scale(1.06);filter:brightness(0.95)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(201,168,76,0.0);transition:background 0.3s;display:flex;align-items:center;justify-content:center}
+.gallery-item:hover .gallery-overlay{background:rgba(201,168,76,0.12)}
+.gallery-plus{font-size:28px;color:var(--white);opacity:0;transform:scale(0.5);transition:all 0.3s;font-weight:300}
+.gallery-item:hover .gallery-plus{opacity:1;transform:scale(1)}
+.newsletter{background:linear-gradient(135deg,#1a160a 0%,#111010 100%);border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15);text-align:center;padding:80px 56px}
+.newsletter h2{font-family:'Playfair Display',serif;font-size:40px;color:var(--white);margin-bottom:12px}
+.newsletter p{color:var(--muted);margin-bottom:36px;font-size:15px}
+.newsletter-form{display:flex;gap:12px;max-width:500px;margin:0 auto}
+.newsletter-input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:100px;color:var(--text);padding:14px 22px;font-family:'Jost',sans-serif;font-size:14px;outline:none;transition:border-color 0.3s}
+.newsletter-input:focus{border-color:var(--gold)}
+.btn-subscribe{background:var(--gold);color:var(--dark);border:none;padding:14px 28px;border-radius:100px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;white-space:nowrap}
+.btn-subscribe:hover{background:var(--gold-l)}
+footer{background:var(--dark2);padding:80px 56px 32px;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:var(--gold);margin-bottom:14px}
+.footer-about{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px}
+.social-links{display:flex;gap:10px}
+.social-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;text-decoration:none;transition:all 0.3s}
+.social-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.08)}
+.footer-col h4{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{text-decoration:none;font-size:14px;color:var(--muted);transition:color 0.3s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:13px;color:var(--muted)}
+.footer-cards{display:flex;gap:8px;align-items:center}
+.payment-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--muted);font-weight:500}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+.reveal-delay-4{transition-delay:0.4s}
+.back-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--dark);font-size:18px;opacity:0;transform:translateY(20px);transition:all 0.3s;box-shadow:0 8px 24px rgba(201,168,76,0.3)}
+.back-top.show{opacity:1;transform:translateY(0)}
+.back-top:hover{background:var(--gold-l);transform:translateY(-3px)}
+@media(max-width:900px){
+  nav{padding:14px 24px}
+  .nav-links{display:none}
+  .hero-content{padding:0 24px}
+  .hero-stats{left:24px;right:24px;gap:24px}
+  .hero-scroll{display:none}
+  .section{padding:72px 24px}
+  .cat-grid-top{grid-template-columns:1fr 1fr}
+  .cat-grid-bot{grid-template-columns:1fr 1fr}
+  .products-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gallery-item:first-child{grid-column:span 2;grid-row:span 1}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .newsletter-form{flex-direction:column}
+  .form-row{grid-template-columns:1fr}
+  .newsletter{padding:60px 24px}
+  footer{padding:60px 24px 24px}
+}
+@media(max-width:600px){
+  .hero h1{font-size:38px}
+  .cat-grid-top{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="navbar">
+  <a class="logo-wrap" href="#">
+    <div class="logo-badge">Tf</div>
+    <div>
+      <div class="logo-name">Trends Furniture</div>
+      <div class="logo-tag">Est. 2018 · Karachi</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    Get a Quote
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</nav>
+
+<section class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1800&q=85" alt="Luxury interior"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span></span>New 2025 Collection Available</div>
+    <h1>Modern Home<br><em>Furniture</em><br>&amp; Decor</h1>
+    <p class="hero-sub">Discover elegant pieces crafted for<br>contemporary living and timeless style.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#products">Explore Collection</a>
+      <a class="btn-outline" href="#contact">Get a Quote</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div><div class="hero-stat-num" id="cnt1">0</div><div class="hero-stat-label">Happy Clients</div></div>
+    <div><div class="hero-stat-num" id="cnt2">0</div><div class="hero-stat-label">Products</div></div>
+    <div><div class="hero-stat-num" id="cnt3">0</div><div class="hero-stat-label">Years Experience</div></div>
+    <div><div class="hero-stat-num" id="cnt4">0</div><div class="hero-stat-label">Cities Delivered</div></div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Premium Sofas<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Luxury Chairs<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Modern Lighting<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Designer Tables<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Elegant Beds<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Bespoke Decor<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Custom Orders<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Free Delivery<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Premium Sofas<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Luxury Chairs<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Modern Lighting<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Designer Tables<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Elegant Beds<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Bespoke Decor<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Custom Orders<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Free Delivery<span class="marquee-dot">◆</span></span>
+  </div>
+</div>
+
+<section class="section" id="categories">
+  <div class="section-header reveal">
+    <span class="section-tag">Browse by Category</span>
+    <h2 class="section-title">Find Your Perfect Piece</h2>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="cat-grid-top">
+    <div class="cat-card cat-card-top reveal reveal-delay-1">
+      <div class="cat-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Sofas"/>
+      <span class="cat-label-top">Sofas</span>
+      <button class="cat-hover-btn">Shop Sofas</button>
+    </div>
+    <div class="cat-card cat-card-top reveal reveal-delay-2">
+      <div class="cat-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80" alt="Chairs"/>
+      <span class="cat-label-top">Chairs</span>
+      <button class="cat-hover-btn">Shop Chairs</button>
+    </div>
+    <div class="cat-card cat-card-top reveal reveal-delay-3">
+      <div class="cat-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&q=80" alt="Lighting"/>
+      <span class="cat-label-top">Lighting</span>
+      <button class="cat-hover-btn">Shop Lighting</button>
+    </div>
+  </div>
+  <div class="cat-grid-bot" style="margin-top:16px">
+    <div class="cat-card cat-card-bot reveal reveal-delay-1">
+      <div class="cat-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1530018352490-c6eef07fd7d0?w=600&q=80" alt="Tables"/>
+      <span class="cat-label-bot">Tables</span>
+      <button class="cat-hover-btn">Shop Tables</button>
+    </div>
+    <div class="cat-card cat-card-bot reveal reveal-delay-2">
+      <div class="cat-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80" alt="Cupboards"/>
+      <span class="cat-label-bot">Cupboards</span>
+      <button class="cat-hover-btn">Shop Now</button>
+    </div>
+    <div class="cat-card cat-card-bot reveal reveal-delay-3">
+      <div class="cat-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80" alt="Beds"/>
+      <span class="cat-label-bot">Beds</span>
+      <button class="cat-hover-btn">Shop Beds</button>
+    </div>
+    <div class="cat-card cat-card-bot reveal reveal-delay-4">
+      <div class="cat-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Decor"/>
+      <span class="cat-label-bot">Decor</span>
+      <button class="cat-hover-btn">Shop Decor</button>
+    </div>
+  </div>
+</section>
+
+<div class="features-bg">
+  <div class="features-grid">
+    <div class="feat-item reveal"><div class="feat-icon">🚚</div><div class="feat-title">Fast Delivery</div><div class="feat-desc">Speedy delivery straight to your door across Pakistan</div></div>
+    <div class="feat-item reveal reveal-delay-1"><div class="feat-icon">🏆</div><div class="feat-title">Quality Materials</div><div class="feat-desc">Premium imported wood, fabric &amp; metal finishes</div></div>
+    <div class="feat-item reveal reveal-delay-2"><div class="feat-icon">🎨</div><div class="feat-title">Custom Orders</div><div class="feat-desc">Tailor any piece to your exact dimensions &amp; style</div></div>
+    <div class="feat-item reveal reveal-delay-3"><div class="feat-icon">💬</div><div class="feat-title">24/7 Support</div><div class="feat-desc">Dedicated customer care via WhatsApp &amp; phone</div></div>
+  </div>
+</div>
+
+<section class="section" id="products">
+  <div class="section-header reveal">
+    <span class="section-tag">Hand-Picked for You</span>
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-sub">Our best-selling pieces loved by thousands of homes</p>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="products-grid">
+    <div class="product-card reveal reveal-delay-1">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" alt="Luxe Sectional Sofa"/>
+        <span class="product-badge">Bestseller</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Sofas</div>
+        <div class="product-name">Luxe Sectional Sofa</div>
+        <div class="product-desc">Italian velvet upholstery, solid oak frame. Available in 6 colours.</div>
+        <div class="product-footer">
+          <div><span class="product-price">PKR 85,000</span><span class="product-price-old">PKR 1,10,000</span></div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+        <div class="product-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=700&q=80" alt="Monaco Accent Chair"/>
+        <span class="product-badge new">New</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Chairs</div>
+        <div class="product-name">Monaco Accent Chair</div>
+        <div class="product-desc">Bouclé fabric with walnut wood legs. Ergonomic &amp; chic.</div>
+        <div class="product-footer">
+          <div><span class="product-price">PKR 38,000</span></div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+        <div class="product-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-delay-3">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=700&q=80" alt="Aurora Floor Lamp"/>
+        <span class="product-badge sale">Sale</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Lighting</div>
+        <div class="product-name">Aurora Floor Lamp</div>
+        <div class="product-desc">Brass finish with marble base. Dimmable warm LED included.</div>
+        <div class="product-footer">
+          <div><span class="product-price">PKR 22,000</span><span class="product-price-old">PKR 28,000</span></div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+        <div class="product-stars">★★★★☆</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-delay-1">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1530018352490-c6eef07fd7d0?w=700&q=80" alt="Nero Dining Table"/>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Tables</div>
+        <div class="product-name">Nero Dining Table</div>
+        <div class="product-desc">Solid sheesham wood, seats 6–8. Hand-finished black stain.</div>
+        <div class="product-footer">
+          <div><span class="product-price">PKR 65,000</span></div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+        <div class="product-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700&q=80" alt="Cloud King Bed"/>
+        <span class="product-badge">Bestseller</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Beds</div>
+        <div class="product-name">Cloud King Bed</div>
+        <div class="product-desc">Upholstered headboard, storage drawers. King &amp; Queen sizes.</div>
+        <div class="product-footer">
+          <div><span class="product-price">PKR 95,000</span><span class="product-price-old">PKR 1,20,000</span></div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+        <div class="product-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-delay-3">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Ceramic Vase Set"/>
+        <span class="product-badge new">New</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Decor</div>
+        <div class="product-name">Ceramic Vase Set</div>
+        <div class="product-desc">Hand-thrown matte ceramic. Set of 3 varying heights.</div>
+        <div class="product-footer">
+          <div><span class="product-price">PKR 8,500</span></div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+        <div class="product-stars">★★★★☆</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing" style="background:var(--dark2)">
+  <div class="section-header reveal">
+    <span class="section-tag">Transparent Pricing</span>
+    <h2 class="section-title">Budget-Friendly Packages</h2>
+    <p class="section-sub">Complete room setups — from a single sofa to a full home</p>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card reveal reveal-delay-1">
+      <div class="price-tier">Starter</div>
+      <div class="price-amount"><sup>PKR </sup>25,000</div>
+      <div class="price-period">per room setup</div>
+      <div class="price-desc">Perfect for a single room refresh with essential furniture pieces.</div>
+      <ul class="price-features">
+        <li>1 Sofa or Bed</li>
+        <li>1 Side Table</li>
+        <li>1 Lighting Piece</li>
+        <li>Free Delivery (Karachi)</li>
+        <li>1-Year Warranty</li>
+      </ul>
+      <button class="btn-price" onclick="scrollToContact('Starter')">Choose Starter</button>
+    </div>
+    <div class="price-card featured reveal reveal-delay-2">
+      <div class="price-tier">Premium</div>
+      <div class="price-amount"><sup>PKR </sup>75,000</div>
+      <div class="price-period">per room setup</div>
+      <div class="price-desc">Our most popular package — a fully furnished living room in one go.</div>
+      <ul class="price-features">
+        <li>Sectional Sofa Set</li>
+        <li>Coffee &amp; Side Tables</li>
+        <li>Floor &amp; Table Lamps</li>
+        <li>Decor Items Included</li>
+        <li>Free Delivery Nationwide</li>
+        <li>2-Year Warranty</li>
+        <li>Interior Styling Advice</li>
+      </ul>
+      <button class="btn-price" onclick="scrollToContact('Premium')">Choose Premium</button>
+    </div>
+    <div class="price-card reveal reveal-delay-3">
+      <div class="price-tier">Luxury</div>
+      <div class="price-amount"><sup>PKR </sup>1,80,000</div>
+      <div class="price-period">full home setup</div>
+      <div class="price-desc">Complete home furnishing with bespoke custom pieces and white-glove service.</div>
+      <ul class="price-features">
+        <li>All Rooms Covered</li>
+        <li>Custom Dimensions</li>
+        <li>Premium Imported Fabrics</li>
+        <li>Interior Designer Visit</li>
+        <li>Priority Delivery</li>
+        <li>5-Year Warranty</li>
+        <li>Post-installation Support</li>
+      </ul>
+      <button class="btn-price" onclick="scrollToContact('Luxury')">Choose Luxury</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="section-header reveal">
+    <span class="section-tag">Real Homes</span>
+    <h2 class="section-title">Customer Spaces</h2>
+    <p class="section-sub">Stunning interiors crafted with our furniture — from real customers</p>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80" alt="Living room" style="min-height:420px"/>
+      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80" alt="Bedroom"/>
+      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=600&q=80" alt="Dining"/>
+      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=600&q=80" alt="Study"/>
+      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80" alt="Bedroom 2"/>
+      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--dark2)">
+  <div class="section-header reveal">
+    <span class="section-tag">What Clients Say</span>
+    <h2 class="section-title">Loved by Thousands</h2>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"The quality of the sofa we ordered is absolutely stunning. Delivery was fast and the team was so professional. Will definitely order again!"</div>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&q=80" alt="Ayesha"/>
+        <div><div class="testi-name">Ayesha Malik</div><div class="testi-loc">DHA, Karachi</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Got the premium package for our new apartment — every piece was perfect. The gold accents matched our aesthetic exactly. Highly recommend!"</div>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&q=80" alt="Bilal"/>
+        <div><div class="testi-name">Bilal Ahmed</div><div class="testi-loc">Gulshan, Karachi</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-3">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Custom bed with storage drawers — delivered exactly to our specs. The wood finish is gorgeous and the warranty gives real peace of mind."</div>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80" alt="Sara"/>
+        <div><div class="testi-name">Sara Qureshi</div><div class="testi-loc">Clifton, Karachi</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-section" id="contact">
+  <div class="contact-wrap">
+    <div class="contact-info reveal">
+      <span class="section-tag">Get in Touch</span>
+      <h2>Let's Design<br>Your Dream Home</h2>
+      <p>Fill the form and we'll get back to you on WhatsApp within minutes. Tell us your needs and budget — we'll find the perfect fit for you.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📱</div>
+        <div><div class="contact-detail-text">WhatsApp &amp; Call</div><div class="contact-detail-val">0325-3548990</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div><div class="contact-detail-text">Showroom</div><div class="contact-detail-val">Karachi, Pakistan</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕙</div>
+        <div><div class="contact-detail-text">Open Hours</div><div class="contact-detail-val">Mon–Sat: 10am – 9pm</div></div>
+      </div>
+    </div>
+    <div class="form-card reveal reveal-delay-2">
+      <div class="form-title">Request a Quote</div>
+      <div class="form-sub">We'll reply on WhatsApp instantly ✅</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" id="f_name" type="text" placeholder="e.g. Ahmed Khan"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-input" id="f_phone" type="tel" placeholder="03XX-XXXXXXX"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Interested Category</label>
+        <select class="form-select" id="f_category">
+          <option value="">Select a category…</option>
+          <option>Sofas &amp; Sectionals</option>
+          <option>Chairs &amp; Armchairs</option>
+          <option>Beds &amp; Bedroom Sets</option>
+          <option>Dining Tables &amp; Chairs</option>
+          <option>Lighting</option>
+          <option>Cupboards &amp; Wardrobes</option>
+          <option>Decor &amp; Accessories</option>
+          <option>Full Home Package</option>
+          <option>Custom / Bespoke Order</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Budget Range</label>
+        <select class="form-select" id="f_budget">
+          <option value="">Select your budget…</option>
+          <option>Under PKR 20,000</option>
+          <option>PKR 20,000 – 50,000</option>
+          <option>PKR 50,000 – 1,00,000</option>
+          <option>PKR 1,00,000 – 2,00,000</option>
+          <option>PKR 2,00,000 – 5,00,000</option>
+          <option>Above PKR 5,00,000</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Delivery City</label>
+        <select class="form-select" id="f_city">
+          <option value="">Select your city…</option>
+          <option>Karachi</option>
+          <option>Lahore</option>
+          <option>Islamabad</option>
+          <option>Rawalpindi</option>
+          <option>Faisalabad</option>
+          <option>Peshawar</option>
+          <option>Quetta</option>
+          <option>Hyderabad</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Package Preference</label>
+        <select class="form-select" id="f_package">
+          <option value="">Any preference?</option>
+          <option>Starter Package (PKR 25,000)</option>
+          <option>Premium Package (PKR 75,000)</option>
+          <option>Luxury Package (PKR 1,80,000)</option>
+          <option>Custom / Let me know options</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Additional Details</label>
+        <textarea class="form-textarea" id="f_msg" placeholder="Room size, colour preference, custom requirements…"></textarea>
+      </div>
+      <button class="btn-whatsapp" onclick="sendWhatsApp()">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#fff"/><path d="M23 9C21.1 7.1 18.6 6 16 6 10.5 6 6 10.5 6 16c0 1.8.5 3.5 1.3 5L6 26l5.2-1.4C12.5 25.5 14.2 26 16 26c5.5 0 10-4.5 10-10 0-2.7-1-5.1-3-7z" fill="#25D366"/><path d="M20.8 18.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2s-.8 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-.9-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.3-.6-.4z" fill="#fff"/></svg>
+        Send via WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="newsletter">
+  <span class="section-tag" style="display:block;margin-bottom:10px">Stay Updated</span>
+  <h2>Get Exclusive Deals First</h2>
+  <p>Subscribe for new arrivals, seasonal sales &amp; interior inspiration</p>
+  <div class="newsletter-form">
+    <input class="newsletter-input" type="email" placeholder="Your email address"/>
+    <button class="btn-subscribe">Subscribe</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Trends Furniture</div>
+      <div class="footer-about">Premium furniture and home decor for contemporary Pakistani homes. Quality you can see, comfort you can feel — delivered to your door.</div>
+      <div class="social-links">
+        <a class="social-btn" href="#">f</a>
+        <a class="social-btn" href="#">in</a>
+        <a class="social-btn" href="#">ig</a>
+        <a class="social-btn" href="#">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#">Sofas</a></li>
+        <li><a href="#">Chairs</a></li>
+        <li><a href="#">Beds</a></li>
+        <li><a href="#">Tables</a></li>
+        <li><a href="#">Lighting</a></li>
+        <li><a href="#">Decor</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Showroom</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Delivery Info</a></li>
+        <li><a href="#">Returns Policy</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="#">Custom Orders</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Trends Furniture. All rights reserved.</div>
+    <div class="footer-cards">
+      <span class="payment-badge">JazzCash</span>
+      <span class="payment-badge">EasyPaisa</span>
+      <span class="payment-badge">Bank Transfer</span>
+      <span class="payment-badge">Cash on Delivery</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+  backTop.classList.toggle('show',window.scrollY>400);
+});
+function animateCount(el,target,suffix){
+  let s=0;const step=target/60;
+  const t=setInterval(()=>{s+=step;if(s>=target){el.textContent=target+suffix;clearInterval(t);return;}el.textContent=Math.floor(s)+suffix;},25);
+}
+setTimeout(()=>{
+  animateCount(document.getElementById('cnt1'),2500,'+');
+  animateCount(document.getElementById('cnt2'),800,'+');
+  animateCount(document.getElementById('cnt3'),7,'+');
+  animateCount(document.getElementById('cnt4'),12,'+');
+},1200);
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+function sendWhatsApp(){
+  const name=document.getElementById('f_name').value.trim()||'Not provided';
+  const phone=document.getElementById('f_phone').value.trim()||'Not provided';
+  const category=document.getElementById('f_category').value||'Not specified';
+  const budget=document.getElementById('f_budget').value||'Not specified';
+  const city=document.getElementById('f_city').value||'Not specified';
+  const pkg=document.getElementById('f_package').value||'Not specified';
+  const msg=document.getElementById('f_msg').value.trim()||'No additional details';
+  const text=`🛋️ *New Enquiry – Trends Furniture*\n\n👤 *Name:* ${name}\n📱 *Phone:* ${phone}\n\n🪑 *Category:* ${category}\n💰 *Budget:* ${budget}\n📦 *Package:* ${pkg}\n🏙️ *City:* ${city}\n\n📝 *Details:*\n${msg}\n\n_Sent via TrendsFurniture website_`;
+  window.open('https://wa.me/923253548990?text='+encodeURIComponent(text),'_blank');
+}
+function scrollToContact(pkg){
+  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>{
+    const sel=document.getElementById('f_package');
+    for(let i=0;i<sel.options.length;i++){if(sel.options[i].text.includes(pkg)){sel.selectedIndex=i;break;}}
+  },700);
+}
+document.querySelectorAll('.product-wishlist').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    this.textContent=this.textContent==='♡'?'♥':'♡';
+    this.style.color=this.textContent==='♥'?'#c94c4c':'';
+  });
+});
+document.querySelectorAll('.btn-add').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    const o=this.textContent;
+    this.textContent='Added ✓';this.style.background='var(--gold)';this.style.color='var(--dark)';
+    setTimeout(()=>{this.textContent=o;this.style.background='';this.style.color='';},2000);
+  });
+});
+</script>
+</body>
+</html>
