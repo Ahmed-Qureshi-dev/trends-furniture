@@ -1,809 +1,811 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Trends Furniture – Modern Home Furniture & Decor</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trends Furniture — Redefine Your Living Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --gold:#c9a84c;--gold-l:#e2c07a;--gold-d:#a07828;
-  --dark:#0f0f0e;--dark2:#181816;--dark3:#202020;--dark4:#282826;
-  --text:#ede9e1;--muted:#8a857d;--white:#fff;
-  --card:#1c1c1a;--radius:14px;
+:root {
+  --cream:#FAF7F2; --beige:#EDE8DF; --warm-white:#FFFDF9; --sand:#D4C8B5;
+  --taupe:#B8A99A; --mocha:#8B7355; --walnut:#6B5344; --charcoal:#2C2825;
+  --gold:#C9A96E; --gold-light:#E8D5B0; --gold-dark:#A8834A;
+  --bg:var(--cream); --surface:var(--warm-white);
+  --text-primary:var(--charcoal); --text-secondary:var(--walnut); --text-muted:var(--taupe);
+  --border:rgba(139,115,85,0.15); --border-strong:rgba(139,115,85,0.3);
+  --shadow-sm:0 2px 16px rgba(44,40,37,0.06);
+  --shadow-md:0 8px 40px rgba(44,40,37,0.10);
+  --shadow-lg:0 20px 60px rgba(44,40,37,0.16);
+  --shadow-xl:0 32px 80px rgba(44,40,37,0.22);
+  --nav-bg:rgba(250,247,242,0.88);
+  --T:0.36s cubic-bezier(0.4,0,0.2,1);
 }
-html{scroll-behavior:smooth}
-body{background:var(--dark);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--dark)}
-::-webkit-scrollbar-thumb{background:var(--gold-d);border-radius:3px}
-nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:18px 56px;background:rgba(15,15,14,0.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.15);transition:padding 0.3s}
-nav.scrolled{padding:12px 56px;background:rgba(15,15,14,0.97)}
-.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-badge{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:var(--gold);font-weight:700}
-.logo-name{font-size:12px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--text)}
-.logo-tag{font-size:10px;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:13px;letter-spacing:0.08em;transition:color 0.3s;position:relative;padding-bottom:4px}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{width:100%}
-.btn-cta{background:var(--gold);color:var(--dark);border:none;padding:10px 24px;border-radius:100px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;gap:8px}
-.btn-cta:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.3)}
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.35);transform:scale(1.05);animation:heroZoom 10s ease-out forwards}
-@keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,10,8,0.92) 40%,rgba(10,10,8,0.3) 100%)}
-.hero-content{position:relative;z-index:2;padding:0 56px;max-width:680px;opacity:0;animation:fadeUp 1s 0.3s ease forwards}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.4);padding:6px 16px;border-radius:100px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
-.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(46px,6.5vw,88px);font-weight:700;line-height:1.05;color:var(--white);margin-bottom:20px}
-.hero h1 em{color:var(--gold);font-style:italic}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:rgba(237,233,225,0.7);margin-bottom:44px;line-height:1.6;letter-spacing:0.03em}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn-primary{background:var(--gold);color:var(--dark);border:none;padding:14px 36px;border-radius:100px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
-.btn-primary:hover{background:var(--gold-l);transform:translateY(-3px);box-shadow:0 12px 32px rgba(201,168,76,0.35)}
-.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.35);padding:14px 36px;border-radius:100px;font-family:'Jost',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
-.hero-stats{position:absolute;bottom:48px;left:56px;right:56px;z-index:2;display:flex;gap:48px;opacity:0;animation:fadeUp 1s 0.7s ease forwards}
-.hero-stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold)}
-.hero-stat-label{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:2px}
-.hero-scroll{position:absolute;right:48px;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)}
-.scroll-line{width:1px;height:80px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollAnim 2s infinite}
-@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:bottom}}
-.section{padding:100px 56px}
-.section-header{text-align:center;margin-bottom:64px}
-.section-tag{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--white);line-height:1.15}
-.section-sub{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--muted);margin-top:12px}
-.gold-divider{width:48px;height:2px;background:var(--gold);margin:20px auto 0;border-radius:1px}
-.cat-grid-top{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
-.cat-grid-bot{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cat-card{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;background:var(--card);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s}
-.cat-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,0.6)}
-.cat-card-top{aspect-ratio:4/3}
-.cat-card-bot{aspect-ratio:1/1}
-.cat-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease,filter 0.4s;filter:brightness(0.65) saturate(0.85)}
-.cat-card:hover img{transform:scale(1.07);filter:brightness(0.8) saturate(1)}
-.cat-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.55) 100%);z-index:1}
-.cat-label-top{position:absolute;top:18px;left:0;right:0;text-align:center;z-index:2;font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,26px);font-weight:600;color:var(--white);letter-spacing:0.04em;text-shadow:0 2px 16px rgba(0,0,0,0.5)}
-.cat-label-bot{position:absolute;bottom:14px;left:0;right:0;text-align:center;z-index:2;font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--white);letter-spacing:0.04em}
-.cat-hover-btn{position:absolute;bottom:-50px;left:50%;transform:translateX(-50%);z-index:3;background:var(--gold);color:var(--dark);border:none;padding:10px 24px;border-radius:100px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:bottom 0.35s ease,box-shadow 0.3s;white-space:nowrap}
-.cat-card:hover .cat-hover-btn{bottom:16px;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.product-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,0.05);transition:transform 0.35s,box-shadow 0.35s,border-color 0.35s;cursor:pointer}
-.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,0.5);border-color:rgba(201,168,76,0.25)}
-.product-img-wrap{position:relative;aspect-ratio:4/3;overflow:hidden}
-.product-img-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(0.8);transition:transform 0.5s,filter 0.4s}
-.product-card:hover .product-img-wrap img{transform:scale(1.06);filter:brightness(0.9)}
-.product-badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--gold);color:var(--dark);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px}
-.product-badge.new{background:#2a9d4a;color:#fff}
-.product-badge.sale{background:#c94c4c;color:#fff}
-.product-wishlist{position:absolute;top:12px;right:12px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.3s;opacity:0}
-.product-card:hover .product-wishlist{opacity:1}
-.product-wishlist:hover{background:rgba(201,168,76,0.2);color:var(--gold)}
-.product-info{padding:20px}
-.product-cat{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.product-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:6px}
-.product-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:14px}
-.product-footer{display:flex;align-items:center;justify-content:space-between}
-.product-price{font-size:20px;font-weight:600;color:var(--gold)}
-.product-price-old{font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:8px}
-.product-stars{color:var(--gold);font-size:12px;letter-spacing:2px;margin-top:10px}
-.btn-add{background:transparent;border:1px solid rgba(201,168,76,0.4);color:var(--gold);padding:8px 18px;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:0.08em;cursor:pointer;transition:all 0.3s}
-.btn-add:hover{background:var(--gold);color:var(--dark)}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px}
-.price-card{border-radius:var(--radius);padding:40px 32px;border:1px solid rgba(255,255,255,0.08);background:var(--card);position:relative;overflow:hidden;transition:transform 0.35s,box-shadow 0.35s}
-.price-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,0.5)}
-.price-card.featured{border-color:var(--gold);background:linear-gradient(135deg,#1e1a0e 0%,#1c1c1a 100%)}
-.price-card.featured::before{content:'Most Popular';position:absolute;top:22px;right:-30px;background:var(--gold);color:var(--dark);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:5px 42px;transform:rotate(45deg)}
-.price-tier{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.price-amount{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--white);line-height:1}
-.price-amount sup{font-size:18px;vertical-align:top;margin-top:10px;display:inline-block}
-.price-period{font-size:13px;color:var(--muted);margin-bottom:24px}
-.price-desc{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.07)}
-.price-features{list-style:none;margin-bottom:36px}
-.price-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
-.price-features li::before{content:'✓';color:var(--gold);font-weight:700}
-.btn-price{width:100%;padding:14px;border-radius:100px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;border:1px solid var(--gold);background:transparent;color:var(--gold)}
-.price-card.featured .btn-price{background:var(--gold);color:var(--dark)}
-.btn-price:hover{background:var(--gold);color:var(--dark);transform:translateY(-2px)}
-.features-bg{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
-.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05)}
-.feat-item{background:var(--dark2);padding:48px 32px;text-align:center;transition:background 0.3s}
-.feat-item:hover{background:var(--dark3)}
-.feat-icon{width:64px;height:64px;border-radius:50%;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:26px;transition:border-color 0.3s,background 0.3s}
-.feat-item:hover .feat-icon{border-color:var(--gold);background:rgba(201,168,76,0.08)}
-.feat-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);margin-bottom:8px}
-.feat-desc{font-size:13px;color:var(--muted);line-height:1.6}
-.marquee-section{padding:28px 0;overflow:hidden;border-top:1px solid rgba(201,168,76,0.12);border-bottom:1px solid rgba(201,168,76,0.12);background:rgba(201,168,76,0.03)}
-.marquee-track{display:flex;gap:64px;white-space:nowrap;animation:marquee 20s linear infinite}
-.marquee-item{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:rgba(201,168,76,0.5);letter-spacing:0.08em;flex-shrink:0}
-.marquee-dot{color:var(--gold);margin:0 8px}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.testi-card{background:var(--card);border-radius:var(--radius);padding:32px;border:1px solid rgba(255,255,255,0.05);transition:transform 0.35s,border-color 0.35s}
-.testi-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,0.2)}
-.testi-stars{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:16px}
-.testi-text{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:var(--text);line-height:1.7;margin-bottom:20px;font-style:italic}
-.testi-author{display:flex;align-items:center;gap:12px}
-.testi-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,168,76,0.3)}
-.testi-name{font-size:14px;font-weight:500;color:var(--white)}
-.testi-loc{font-size:12px;color:var(--muted)}
-.contact-section{background:var(--dark2)}
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.contact-info h2{font-family:'Playfair Display',serif;font-size:40px;color:var(--white);margin-bottom:16px;margin-top:12px}
-.contact-info p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:32px}
-.contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.contact-detail-icon{width:44px;height:44px;border-radius:50%;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.contact-detail-text{font-size:14px;color:var(--muted)}
-.contact-detail-val{font-size:15px;font-weight:500;color:var(--text)}
-.form-card{background:var(--card);border-radius:18px;padding:40px;border:1px solid rgba(255,255,255,0.07)}
-.form-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--white);margin-bottom:6px}
-.form-sub{font-size:13px;color:var(--muted);margin-bottom:28px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.form-group{margin-bottom:14px}
-.form-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;display:block}
-.form-input,.form-select,.form-textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:var(--text);font-family:'Jost',sans-serif;font-size:14px;font-weight:300;padding:13px 16px;transition:border-color 0.3s,background 0.3s;outline:none}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);background:rgba(201,168,76,0.04)}
-.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238a857d' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;background-color:rgba(255,255,255,0.04)}
-.form-select option{background:#1c1c1a;color:var(--text)}
-.form-textarea{resize:none;height:100px}
-.btn-whatsapp{width:100%;background:#25D366;color:#fff;border:none;padding:16px;border-radius:100px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px}
-.btn-whatsapp:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,0.3)}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:12px}
-.gallery-item{overflow:hidden;border-radius:10px;cursor:pointer;position:relative}
-.gallery-item:first-child{grid-column:span 2;grid-row:span 2}
-.gallery-item img{width:100%;height:100%;object-fit:cover;min-height:200px;display:block;transition:transform 0.5s,filter 0.4s;filter:brightness(0.8)}
-.gallery-item:hover img{transform:scale(1.06);filter:brightness(0.95)}
-.gallery-overlay{position:absolute;inset:0;background:rgba(201,168,76,0.0);transition:background 0.3s;display:flex;align-items:center;justify-content:center}
-.gallery-item:hover .gallery-overlay{background:rgba(201,168,76,0.12)}
-.gallery-plus{font-size:28px;color:var(--white);opacity:0;transform:scale(0.5);transition:all 0.3s;font-weight:300}
-.gallery-item:hover .gallery-plus{opacity:1;transform:scale(1)}
-.newsletter{background:linear-gradient(135deg,#1a160a 0%,#111010 100%);border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15);text-align:center;padding:80px 56px}
-.newsletter h2{font-family:'Playfair Display',serif;font-size:40px;color:var(--white);margin-bottom:12px}
-.newsletter p{color:var(--muted);margin-bottom:36px;font-size:15px}
-.newsletter-form{display:flex;gap:12px;max-width:500px;margin:0 auto}
-.newsletter-input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:100px;color:var(--text);padding:14px 22px;font-family:'Jost',sans-serif;font-size:14px;outline:none;transition:border-color 0.3s}
-.newsletter-input:focus{border-color:var(--gold)}
-.btn-subscribe{background:var(--gold);color:var(--dark);border:none;padding:14px 28px;border-radius:100px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;white-space:nowrap}
-.btn-subscribe:hover{background:var(--gold-l)}
-footer{background:var(--dark2);padding:80px 56px 32px;border-top:1px solid rgba(255,255,255,0.05)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
-.footer-logo{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:var(--gold);margin-bottom:14px}
-.footer-about{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px}
-.social-links{display:flex;gap:10px}
-.social-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;text-decoration:none;transition:all 0.3s}
-.social-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.08)}
-.footer-col h4{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:10px}
-.footer-col ul li a{text-decoration:none;font-size:14px;color:var(--muted);transition:color 0.3s}
-.footer-col ul li a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
-.footer-copy{font-size:13px;color:var(--muted)}
-.footer-cards{display:flex;gap:8px;align-items:center}
-.payment-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--muted);font-weight:500}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.1s}
-.reveal-delay-2{transition-delay:0.2s}
-.reveal-delay-3{transition-delay:0.3s}
-.reveal-delay-4{transition-delay:0.4s}
-.back-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--dark);font-size:18px;opacity:0;transform:translateY(20px);transition:all 0.3s;box-shadow:0 8px 24px rgba(201,168,76,0.3)}
-.back-top.show{opacity:1;transform:translateY(0)}
-.back-top:hover{background:var(--gold-l);transform:translateY(-3px)}
-@media(max-width:900px){
-  nav{padding:14px 24px}
-  .nav-links{display:none}
-  .hero-content{padding:0 24px}
-  .hero-stats{left:24px;right:24px;gap:24px}
-  .hero-scroll{display:none}
-  .section{padding:72px 24px}
-  .cat-grid-top{grid-template-columns:1fr 1fr}
-  .cat-grid-bot{grid-template-columns:1fr 1fr}
-  .products-grid{grid-template-columns:1fr 1fr}
-  .pricing-grid{grid-template-columns:1fr}
-  .features-grid{grid-template-columns:1fr 1fr}
-  .testi-grid{grid-template-columns:1fr}
-  .contact-wrap{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr}
-  .gallery-item:first-child{grid-column:span 2;grid-row:span 1}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .newsletter-form{flex-direction:column}
-  .form-row{grid-template-columns:1fr}
-  .newsletter{padding:60px 24px}
-  footer{padding:60px 24px 24px}
+[data-theme="dark"] {
+  --cream:#181511; --beige:#201D18; --warm-white:#1D1A16; --sand:#2E2A23;
+  --taupe:#5C5650; --mocha:#A08B72; --walnut:#C4AC90;
+  --charcoal:#F0EDE8; --gold:#C9A96E; --gold-light:#2E2618; --gold-dark:#E8C48A;
+  --bg:#181511; --surface:#1D1A16;
+  --text-primary:#F0EDE8; --text-secondary:#C4AC90; --text-muted:#6A6460;
+  --border:rgba(201,169,110,0.12); --border-strong:rgba(201,169,110,0.25);
+  --nav-bg:rgba(24,21,17,0.92);
 }
-@media(max-width:600px){
-  .hero h1{font-size:38px}
-  .cat-grid-top{grid-template-columns:1fr}
-  .products-grid{grid-template-columns:1fr}
-  .features-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
-}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text-primary);overflow-x:hidden;transition:background var(--T),color var(--T);}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+button{font-family:'Jost',sans-serif;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);backdrop-filter:blur(24px) saturate(200%);-webkit-backdrop-filter:blur(24px) saturate(200%);border-bottom:1px solid var(--border);transition:all var(--T);}
+.nav-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:240px 1fr 280px;align-items:center;padding:0 2.5rem;height:76px;gap:2rem;}
+.nav-logo{display:flex;flex-direction:column;line-height:1;gap:2px;text-decoration:none;}
+.nav-logo-top{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:600;letter-spacing:0.07em;color:var(--text-primary);text-transform:uppercase;}
+.nav-logo-top span{color:var(--gold);}
+.nav-logo-line{width:100%;height:1px;background:linear-gradient(to right,var(--gold) 40%,transparent);margin:3px 0 3px;}
+.nav-logo-bottom{font-family:'Jost',sans-serif;font-size:0.5rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--text-muted);font-weight:400;padding-left:2px;}
+.nav-center{display:flex;flex-direction:column;gap:6px;align-items:center;}
+.nav-links{display:flex;gap:2.25rem;list-style:none;font-size:0.76rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;}
+.nav-links a{color:var(--text-secondary);transition:color var(--T);position:relative;padding-bottom:3px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform var(--T);transform-origin:left;}
+.nav-links a:hover{color:var(--text-primary);}
+.nav-links a:hover::after{transform:scaleX(1);}
+.search-wrap{position:relative;width:100%;max-width:380px;}
+.search-input{width:100%;padding:0.48rem 1rem 0.48rem 2.4rem;background:rgba(139,115,85,0.07);border:1px solid var(--border);border-radius:50px;font-family:'Jost',sans-serif;font-size:0.8rem;color:var(--text-primary);outline:none;transition:all var(--T);}
+.search-input:focus{border-color:var(--gold);background:var(--surface);box-shadow:0 0 0 3px rgba(201,169,110,0.13);}
+.search-icon{position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);color:var(--text-muted);pointer-events:none;}
+.search-dd{position:absolute;top:calc(100% + 10px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-md);z-index:200;overflow:hidden;display:none;}
+.search-dd.open{display:block;animation:fadeDown .2s ease;}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+.sr{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;cursor:pointer;transition:background var(--T);}
+.sr:hover{background:var(--beige);}
+.sr img{width:44px;height:44px;object-fit:cover;border-radius:8px;background:var(--beige);flex-shrink:0;}
+.sr-name{font-size:.82rem;font-weight:500;color:var(--text-primary);}
+.sr-price{font-size:.73rem;color:var(--gold);font-weight:600;}
+.nav-icons{display:flex;gap:1rem;align-items:center;justify-content:flex-end;}
+.icon-btn{background:none;border:none;cursor:pointer;color:var(--text-secondary);transition:color var(--T),transform var(--T);position:relative;padding:5px;}
+.icon-btn:hover{color:var(--text-primary);transform:scale(1.1);}
+.ibadge{position:absolute;top:-1px;right:-1px;width:15px;height:15px;background:var(--gold);border-radius:50%;font-size:8px;font-weight:700;display:flex;align-items:center;justify-content:center;color:white;}
+.theme-btn{background:none;border:1px solid var(--border);border-radius:50px;padding:5px 12px;cursor:pointer;font-size:0.72rem;color:var(--text-muted);transition:all var(--T);white-space:nowrap;letter-spacing:0.06em;}
+.theme-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+/* HERO */
+.hero{position:relative;width:100%;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:center;}
+.hero-bg-img{position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1800&h=1000&fit=crop') center/cover no-repeat;}
+.hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,16,12,0.82) 0%,rgba(20,16,12,0.48) 55%,rgba(20,16,12,0.15) 100%);}
+.hero-inner{position:relative;z-index:2;max-width:1440px;margin:0 auto;padding:0 2.5rem;padding-top:76px;width:100%;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.6rem;}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,6.5vw,7rem);font-weight:300;line-height:1.04;letter-spacing:-0.01em;color:#fff;margin-bottom:1.8rem;max-width:700px;}
+.hero-headline em{font-style:italic;color:var(--gold-light);}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.62);line-height:1.75;max-width:420px;margin-bottom:3rem;font-weight:300;}
+.hero-actions{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--charcoal);padding:1rem 2.5rem;border-radius:50px;border:none;cursor:pointer;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:all var(--T);box-shadow:0 6px 28px rgba(201,169,110,.4);}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-3px);box-shadow:0 12px 36px rgba(201,169,110,.45);}
+.btn-ghost{background:transparent;color:#fff;padding:1rem 2.5rem;border-radius:50px;border:1.5px solid rgba(255,255,255,0.45);cursor:pointer;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400;transition:all var(--T);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(255,255,255,.45);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.45),transparent);animation:sp 2s infinite;}
+@keyframes sp{0%,100%{opacity:.3;}50%{opacity:1;}}
+
+/* Hero floating product cards */
+.hero-cards{position:absolute;right:2.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1rem;z-index:3;padding-top:76px;}
+.hcard{background:rgba(255,255,255,0.10);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.18);border-radius:18px;padding:.85rem 1.1rem;display:flex;align-items:center;gap:.85rem;width:240px;cursor:pointer;transition:all var(--T);}
+.hcard:hover{background:rgba(255,255,255,0.16);transform:translateX(-4px);}
+.hcard img{width:58px;height:58px;object-fit:cover;border-radius:12px;flex-shrink:0;}
+.hcard-info{flex:1;min-width:0;}
+.hcard-cat{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
+.hcard-name{font-size:.83rem;font-weight:500;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hcard-price{font-size:.78rem;color:rgba(255,255,255,.65);margin-top:2px;}
+.hcard-add{width:30px;height:30px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--charcoal);flex-shrink:0;transition:all var(--T);}
+.hcard-add:hover{background:white;transform:scale(1.1);}
+
+/* SHOWCASE STRIP */
+.showcase{background:var(--surface);padding:5rem 0;}
+.showcase-label{max-width:1440px;margin:0 auto;padding:0 2.5rem;display:flex;justify-content:space-between;align-items:center;margin-bottom:2.25rem;}
+.showcase-track{display:flex;gap:1.25rem;padding:0 2.5rem;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory;}
+.showcase-track::-webkit-scrollbar{display:none;}
+.scard{flex:0 0 270px;border-radius:20px;overflow:hidden;background:var(--beige);position:relative;scroll-snap-align:start;cursor:pointer;transition:transform var(--T),box-shadow var(--T);}
+.scard:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+.scard img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .55s ease;}
+.scard:hover img{transform:scale(1.06);}
+.scard-body{padding:1.1rem 1.25rem 1.4rem;}
+.scard-cat{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.3rem;}
+.scard-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--text-primary);margin-bottom:.5rem;}
+.scard-row{display:flex;align-items:center;justify-content:space-between;}
+.scard-price{font-size:.95rem;font-weight:600;color:var(--text-primary);}
+.scard-btn{width:34px;height:34px;border-radius:50%;background:var(--charcoal);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--cream);transition:all var(--T);}
+[data-theme="dark"] .scard-btn{background:var(--gold);color:var(--charcoal);}
+.scard-btn:hover{background:var(--gold);color:var(--charcoal);transform:scale(1.1);}
+.scard-badge{position:absolute;top:.9rem;left:.9rem;padding:.28rem .7rem;border-radius:50px;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;}
+.b-new{background:var(--charcoal);color:var(--cream);}
+.b-sale{background:var(--gold);color:white;}
+.b-top{background:white;color:var(--charcoal);}
+
+/* EDITORIAL */
+.editorial{padding:7rem 2.5rem;background:var(--bg);}
+.ed-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.ed-img-stack{position:relative;height:600px;}
+.ed-img-main{position:absolute;top:0;left:0;width:75%;height:85%;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-xl);}
+.ed-img-main img{width:100%;height:100%;object-fit:cover;}
+.ed-img-accent{position:absolute;bottom:0;right:0;width:55%;height:55%;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:6px solid var(--bg);}
+.ed-img-accent img{width:100%;height:100%;object-fit:cover;}
+.ed-badge{position:absolute;top:2rem;right:2rem;z-index:2;background:var(--gold);border-radius:50%;width:100px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(201,169,110,.45);}
+.ed-badge-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:white;line-height:1;}
+.ed-badge-lbl{font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85);}
+.eyebrow{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;display:flex;align-items:center;gap:.5rem;margin-bottom:1.2rem;}
+.eyebrow::before{content:'';display:block;width:22px;height:1px;background:var(--gold);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:300;color:var(--text-primary);line-height:1.2;}
+.ed-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:300;line-height:1.15;color:var(--text-primary);margin-bottom:1.5rem;}
+.ed-title em{font-style:italic;color:var(--mocha);}
+.ed-body{font-size:.95rem;color:var(--text-secondary);line-height:1.8;font-weight:300;margin-bottom:2.5rem;max-width:430px;}
+.ed-features{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;}
+.ed-feat{display:flex;align-items:center;gap:1rem;}
+.ed-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.ed-feat-text{font-size:.85rem;color:var(--text-secondary);font-weight:300;}
+
+/* ROOMS */
+.rooms{padding:6rem 2.5rem;background:var(--surface);}
+.rooms-inner{max-width:1440px;margin:0 auto;}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;}
+.link-arrow{display:flex;align-items:center;gap:.4rem;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);transition:color var(--T),gap var(--T);font-weight:500;white-space:nowrap;}
+.link-arrow:hover{color:var(--gold);gap:.7rem;}
+.rooms-grid{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:auto auto;gap:1.5rem;}
+.room-card{position:relative;border-radius:22px;overflow:hidden;cursor:pointer;}
+.room-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.room-card:hover img{transform:scale(1.05);}
+.room-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,22,16,.72) 0%,transparent 55%);transition:opacity var(--T);}
+.room-card:hover .room-overlay{opacity:.88;}
+.room-info{position:absolute;bottom:0;left:0;right:0;padding:2rem;}
+.room-tag{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
+.room-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:white;margin-bottom:.75rem;}
+.room-btn{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:.45rem 1.1rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:white;cursor:pointer;transition:all var(--T);font-family:'Jost',sans-serif;}
+.room-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--charcoal);}
+.room-large{grid-row:1/3;min-height:520px;}
+.room-sm{aspect-ratio:16/10;}
+
+/* PRODUCTS */
+.trending{padding:6rem 2.5rem;background:var(--bg);}
+.trending-inner{max-width:1440px;margin:0 auto;}
+.filter-bar{display:flex;gap:.5rem;margin-bottom:3rem;flex-wrap:wrap;}
+.filt{padding:.48rem 1.25rem;border-radius:50px;border:1px solid var(--border);background:transparent;font-family:'Jost',sans-serif;font-size:.76rem;letter-spacing:.08em;color:var(--text-secondary);cursor:pointer;transition:all var(--T);}
+.filt.active,.filt:hover{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal);}
+[data-theme="dark"] .filt.active,[data-theme="dark"] .filt:hover{background:var(--gold);color:var(--charcoal);border-color:var(--gold);}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+.prod-card{position:relative;cursor:pointer;}
+.prod-img-wrap{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--beige);margin-bottom:1rem;}
+.prod-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;}
+.prod-card:hover .prod-img-wrap img{transform:scale(1.06);}
+.prod-actions{position:absolute;bottom:.9rem;left:.9rem;right:.9rem;display:flex;gap:.5rem;transform:translateY(50px);opacity:0;transition:all var(--T);}
+.prod-card:hover .prod-actions{transform:translateY(0);opacity:1;}
+.pa-cart{flex:1;padding:.65rem;border-radius:50px;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;background:var(--charcoal);color:var(--cream);border:none;cursor:pointer;transition:background var(--T);font-weight:500;}
+.pa-cart:hover{background:var(--walnut);}
+.pa-icon{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);flex-shrink:0;transition:all var(--T);}
+.pa-icon:hover{color:var(--gold);}
+.pa-icon.wished{color:#e05252;}
+.prod-badge{position:absolute;top:.9rem;left:.9rem;padding:.28rem .7rem;border-radius:50px;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;}
+.prod-cat{font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.25rem;}
+.prod-name{font-size:.92rem;font-weight:500;color:var(--text-primary);margin-bottom:.3rem;transition:color var(--T);}
+.prod-card:hover .prod-name{color:var(--gold);}
+.prod-price-row{display:flex;align-items:center;gap:.5rem;}
+.prod-price{font-size:1rem;font-weight:600;color:var(--text-primary);}
+.prod-old{font-size:.8rem;color:var(--text-muted);text-decoration:line-through;}
+
+/* BANNER */
+.banner{position:relative;height:480px;overflow:hidden;}
+.banner-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1800&h=700&fit=crop') center/cover no-repeat;}
+.banner-bg::after{content:'';position:absolute;inset:0;background:rgba(20,16,12,.65);}
+.banner-inner{position:relative;z-index:2;height:100%;max-width:1440px;margin:0 auto;padding:0 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.banner-eyebrow{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem;}
+.banner-eyebrow::before,.banner-eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--gold);}
+.banner-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4.5rem);font-weight:300;color:white;line-height:1.1;margin-bottom:1.25rem;}
+.banner-title em{font-style:italic;color:var(--gold-light);}
+.banner-sub{font-size:.95rem;color:rgba(255,255,255,.6);font-weight:300;margin-bottom:2.5rem;max-width:480px;}
+.banner-stats{display:flex;gap:4rem;border-top:1px solid rgba(255,255,255,.12);padding-top:2.5rem;}
+.bstat-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:white;}
+.bstat-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+
+/* WHY */
+.why{padding:7rem 2.5rem;background:var(--surface);}
+.why-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.why-img-main{border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-xl);position:relative;}
+.why-img-main img{width:100%;height:100%;object-fit:cover;}
+.why-float{position:absolute;bottom:-24px;right:-28px;background:var(--charcoal);border-radius:20px;padding:1.4rem 1.75rem;box-shadow:var(--shadow-lg);}
+[data-theme="dark"] .why-float{background:var(--beige);border:1px solid var(--border);}
+.why-float-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;color:var(--gold);line-height:1;}
+.why-float-text{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:.25rem;}
+[data-theme="dark"] .why-float-text{color:var(--text-muted);}
+.why-items{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;margin-top:2.5rem;}
+.wi{padding:1.6rem;border-radius:18px;border:1px solid var(--border);background:var(--bg);transition:border-color var(--T),transform var(--T),box-shadow var(--T);}
+.wi:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:var(--shadow-sm);}
+.wi-icon{width:44px;height:44px;background:var(--gold-light);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--mocha);}
+[data-theme="dark"] .wi-icon{background:rgba(201,169,110,0.15);color:var(--gold);}
+.wi-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;color:var(--text-primary);margin-bottom:.35rem;}
+.wi-desc{font-size:.8rem;color:var(--text-secondary);line-height:1.65;font-weight:300;}
+
+/* TESTIMONIALS */
+.testimonials{padding:6rem 2.5rem;background:var(--bg);}
+.test-inner{max-width:1440px;margin:0 auto;}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;}
+.tcard{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:2.25rem;transition:box-shadow var(--T),transform var(--T),border-color var(--T);}
+.tcard:hover{box-shadow:var(--shadow-md);transform:translateY(-5px);border-color:var(--border-strong);}
+.tcard-stars{color:var(--gold);font-size:.9rem;letter-spacing:2px;margin-bottom:1.25rem;}
+.tcard-quote{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--text-primary);line-height:1.7;margin-bottom:1.75rem;}
+.tcard-author{display:flex;align-items:center;gap:.85rem;}
+.tcard-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--beige);}
+.tcard-avatar img{width:100%;height:100%;object-fit:cover;}
+.tcard-name{font-size:.85rem;font-weight:600;color:var(--text-primary);}
+.tcard-role{font-size:.7rem;color:var(--text-muted);}
+
+/* NEWSLETTER */
+.newsletter{padding:6rem 2.5rem;background:var(--surface);}
+.nl-inner{max-width:1440px;margin:0 auto;background:linear-gradient(135deg,var(--charcoal) 0%,var(--walnut) 100%);border-radius:32px;padding:5rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden;}
+[data-theme="dark"] .nl-inner{background:linear-gradient(135deg,var(--beige) 0%,var(--sand) 100%);}
+.nl-deco{position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(201,169,110,.12);pointer-events:none;}
+.nl-deco2{position:absolute;left:-40px;bottom:-80px;width:220px;height:220px;border-radius:50%;background:rgba(201,169,110,.08);pointer-events:none;}
+.nl-eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;}
+.nl-eyebrow::before{content:'';display:block;width:18px;height:1px;background:var(--gold);}
+.nl-title{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:white;line-height:1.15;margin-bottom:.75rem;}
+[data-theme="dark"] .nl-title{color:var(--text-primary);}
+.nl-sub{font-size:.9rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.7;}
+[data-theme="dark"] .nl-sub{color:var(--text-secondary);}
+.nl-form{display:flex;flex-direction:column;gap:1rem;}
+.nl-input{padding:1rem 1.5rem;border-radius:50px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:white;font-family:'Jost',sans-serif;font-size:.9rem;outline:none;transition:all var(--T);}
+[data-theme="dark"] .nl-input{background:rgba(0,0,0,.1);border-color:var(--border);color:var(--text-primary);}
+.nl-input::placeholder{color:rgba(255,255,255,.35);}
+.nl-input:focus{border-color:var(--gold);}
+.nl-btn{padding:1rem 2rem;border-radius:50px;background:var(--gold);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--charcoal);transition:all var(--T);}
+.nl-btn:hover{background:white;transform:translateY(-2px);}
+.nl-note{font-size:.7rem;color:rgba(255,255,255,.3);padding-left:.5rem;}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:5rem 2.5rem 2.5rem;}
+[data-theme="dark"] footer{background:#111009;}
+.foot-inner{max-width:1440px;margin:0 auto;}
+.foot-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:4rem;}
+.fbl{display:flex;flex-direction:column;line-height:1;gap:2px;margin-bottom:1.25rem;}
+.fbl-top{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;letter-spacing:.07em;color:white;text-transform:uppercase;}
+.fbl-top span{color:var(--gold);}
+.fbl-line{width:100%;height:1px;background:linear-gradient(to right,var(--gold) 40%,transparent);margin:3px 0 4px;}
+.fbl-bottom{font-size:.5rem;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:400;}
+.foot-brand p{font-size:.82rem;color:rgba(255,255,255,.38);line-height:1.75;font-weight:300;max-width:260px;margin-bottom:2rem;}
+.foot-social{display:flex;gap:.75rem;}
+.fsoc{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);cursor:pointer;transition:all var(--T);}
+.fsoc:hover{border-color:var(--gold);color:var(--gold);}
+.foot-col h4{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;font-weight:600;}
+.foot-col a{display:block;font-size:.82rem;color:rgba(255,255,255,.38);margin-bottom:.7rem;transition:color var(--T);}
+.foot-col a:hover{color:rgba(255,255,255,.85);}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.foot-copy{font-size:.73rem;color:rgba(255,255,255,.22);}
+
+/* MODAL */
+.overlay{position:fixed;inset:0;background:rgba(20,16,12,.75);z-index:2000;display:flex;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity var(--T);}
+.overlay.open{opacity:1;pointer-events:all;}
+.modal{background:var(--surface);border-radius:28px;max-width:820px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-xl);transform:scale(.95) translateY(20px);transition:transform var(--T);position:relative;}
+.overlay.open .modal{transform:scale(1) translateY(0);}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;}
+.modal-img-side{border-radius:28px 0 0 28px;overflow:hidden;aspect-ratio:3/4;background:var(--beige);}
+.modal-img-side img{width:100%;height:100%;object-fit:cover;}
+.modal-info-side{padding:2.75rem;}
+.modal-cat{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem;}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--text-primary);margin-bottom:.5rem;line-height:1.2;}
+.modal-price{font-size:1.5rem;font-weight:600;color:var(--gold);margin-bottom:1rem;}
+.modal-desc{font-size:.83rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.6rem;font-weight:300;}
+.modal-clr-lbl{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-bottom:.6rem;}
+.swatches{display:flex;gap:.5rem;margin-bottom:1.75rem;}
+.sw{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all var(--T);}
+.sw.active,.sw:hover{transform:scale(1.18);box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--gold);}
+.modal-actions{display:flex;gap:.75rem;}
+.m-add{flex:1;padding:.85rem;border-radius:50px;background:var(--charcoal);color:var(--cream);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:all var(--T);}
+.m-add:hover{background:var(--walnut);}
+.m-wish{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all var(--T);flex-shrink:0;}
+.m-wish:hover,.m-wish.wished{color:#e05252;border-color:#e05252;}
+.m-close{position:absolute;top:1.25rem;right:1.25rem;width:36px;height:36px;border-radius:50%;background:var(--beige);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-secondary);font-size:1.1rem;transition:all var(--T);z-index:5;}
+.m-close:hover{background:var(--sand);}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;z-index:3000;background:var(--charcoal);color:var(--cream);padding:.9rem 1.5rem;border-radius:14px;font-size:.84rem;box-shadow:var(--shadow-xl);transform:translateY(80px);opacity:0;transition:all .4s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;gap:.75rem;}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast-icon{color:var(--gold);}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+.rv2{transition-delay:.1s;}.rv3{transition-delay:.2s;}.rv4{transition-delay:.3s;}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.prod-grid{grid-template-columns:repeat(3,1fr);}.rooms-grid{grid-template-columns:1fr 1fr;}.room-large{grid-row:auto;min-height:300px;}}
+@media(max-width:900px){.nav-inner{grid-template-columns:auto 1fr;}.nav-center{display:none;}.hero-cards{display:none;}.ed-inner,.why-inner{grid-template-columns:1fr;}.nl-inner{grid-template-columns:1fr;}.foot-top{grid-template-columns:1fr 1fr;}.test-grid{grid-template-columns:1fr 1fr;}.modal-grid{grid-template-columns:1fr;}.modal-img-side{border-radius:28px 28px 0 0;aspect-ratio:16/9;}}
+@media(max-width:640px){.prod-grid{grid-template-columns:repeat(2,1fr);}.rooms-grid{grid-template-columns:1fr;}.test-grid{grid-template-columns:1fr;}.banner-stats{gap:2rem;flex-wrap:wrap;}.nl-inner{padding:3rem 2rem;}.foot-top{grid-template-columns:1fr;}.ed-img-stack{height:420px;}}
 </style>
 </head>
 <body>
 
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<nav id="navbar">
-  <a class="logo-wrap" href="#">
-    <div class="logo-badge">Tf</div>
-    <div>
-      <div class="logo-name">Trends Furniture</div>
-      <div class="logo-tag">Est. 2018 · Karachi</div>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#categories">Categories</a></li>
-    <li><a href="#products">Shop</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-    Get a Quote
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </button>
-</nav>
-
-<section class="hero">
-  <img class="hero-img" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1800&q=85" alt="Luxury interior"/>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><span></span>New 2025 Collection Available</div>
-    <h1>Modern Home<br><em>Furniture</em><br>&amp; Decor</h1>
-    <p class="hero-sub">Discover elegant pieces crafted for<br>contemporary living and timeless style.</p>
-    <div class="hero-btns">
-      <a class="btn-primary" href="#products">Explore Collection</a>
-      <a class="btn-outline" href="#contact">Get a Quote</a>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div><div class="hero-stat-num" id="cnt1">0</div><div class="hero-stat-label">Happy Clients</div></div>
-    <div><div class="hero-stat-num" id="cnt2">0</div><div class="hero-stat-label">Products</div></div>
-    <div><div class="hero-stat-num" id="cnt3">0</div><div class="hero-stat-label">Years Experience</div></div>
-    <div><div class="hero-stat-num" id="cnt4">0</div><div class="hero-stat-label">Cities Delivered</div></div>
-  </div>
-  <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
-</section>
-
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item">Premium Sofas<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Luxury Chairs<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Modern Lighting<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Designer Tables<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Elegant Beds<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Bespoke Decor<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Custom Orders<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Free Delivery<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Premium Sofas<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Luxury Chairs<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Modern Lighting<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Designer Tables<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Elegant Beds<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Bespoke Decor<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Custom Orders<span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Free Delivery<span class="marquee-dot">◆</span></span>
-  </div>
-</div>
-
-<section class="section" id="categories">
-  <div class="section-header reveal">
-    <span class="section-tag">Browse by Category</span>
-    <h2 class="section-title">Find Your Perfect Piece</h2>
-    <div class="gold-divider"></div>
-  </div>
-  <div class="cat-grid-top">
-    <div class="cat-card cat-card-top reveal reveal-delay-1">
-      <div class="cat-overlay"></div>
-      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Sofas"/>
-      <span class="cat-label-top">Sofas</span>
-      <button class="cat-hover-btn">Shop Sofas</button>
-    </div>
-    <div class="cat-card cat-card-top reveal reveal-delay-2">
-      <div class="cat-overlay"></div>
-      <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80" alt="Chairs"/>
-      <span class="cat-label-top">Chairs</span>
-      <button class="cat-hover-btn">Shop Chairs</button>
-    </div>
-    <div class="cat-card cat-card-top reveal reveal-delay-3">
-      <div class="cat-overlay"></div>
-      <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&q=80" alt="Lighting"/>
-      <span class="cat-label-top">Lighting</span>
-      <button class="cat-hover-btn">Shop Lighting</button>
-    </div>
-  </div>
-  <div class="cat-grid-bot" style="margin-top:16px">
-    <div class="cat-card cat-card-bot reveal reveal-delay-1">
-      <div class="cat-overlay"></div>
-      <img src="https://images.unsplash.com/photo-1530018352490-c6eef07fd7d0?w=600&q=80" alt="Tables"/>
-      <span class="cat-label-bot">Tables</span>
-      <button class="cat-hover-btn">Shop Tables</button>
-    </div>
-    <div class="cat-card cat-card-bot reveal reveal-delay-2">
-      <div class="cat-overlay"></div>
-      <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80" alt="Cupboards"/>
-      <span class="cat-label-bot">Cupboards</span>
-      <button class="cat-hover-btn">Shop Now</button>
-    </div>
-    <div class="cat-card cat-card-bot reveal reveal-delay-3">
-      <div class="cat-overlay"></div>
-      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80" alt="Beds"/>
-      <span class="cat-label-bot">Beds</span>
-      <button class="cat-hover-btn">Shop Beds</button>
-    </div>
-    <div class="cat-card cat-card-bot reveal reveal-delay-4">
-      <div class="cat-overlay"></div>
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Decor"/>
-      <span class="cat-label-bot">Decor</span>
-      <button class="cat-hover-btn">Shop Decor</button>
-    </div>
-  </div>
-</section>
-
-<div class="features-bg">
-  <div class="features-grid">
-    <div class="feat-item reveal"><div class="feat-icon">🚚</div><div class="feat-title">Fast Delivery</div><div class="feat-desc">Speedy delivery straight to your door across Pakistan</div></div>
-    <div class="feat-item reveal reveal-delay-1"><div class="feat-icon">🏆</div><div class="feat-title">Quality Materials</div><div class="feat-desc">Premium imported wood, fabric &amp; metal finishes</div></div>
-    <div class="feat-item reveal reveal-delay-2"><div class="feat-icon">🎨</div><div class="feat-title">Custom Orders</div><div class="feat-desc">Tailor any piece to your exact dimensions &amp; style</div></div>
-    <div class="feat-item reveal reveal-delay-3"><div class="feat-icon">💬</div><div class="feat-title">24/7 Support</div><div class="feat-desc">Dedicated customer care via WhatsApp &amp; phone</div></div>
-  </div>
-</div>
-
-<section class="section" id="products">
-  <div class="section-header reveal">
-    <span class="section-tag">Hand-Picked for You</span>
-    <h2 class="section-title">Featured Products</h2>
-    <p class="section-sub">Our best-selling pieces loved by thousands of homes</p>
-    <div class="gold-divider"></div>
-  </div>
-  <div class="products-grid">
-    <div class="product-card reveal reveal-delay-1">
-      <div class="product-img-wrap">
-        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" alt="Luxe Sectional Sofa"/>
-        <span class="product-badge">Bestseller</span>
-        <button class="product-wishlist">♡</button>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Sofas</div>
-        <div class="product-name">Luxe Sectional Sofa</div>
-        <div class="product-desc">Italian velvet upholstery, solid oak frame. Available in 6 colours.</div>
-        <div class="product-footer">
-          <div><span class="product-price">PKR 85,000</span><span class="product-price-old">PKR 1,10,000</span></div>
-          <button class="btn-add">Add to Cart</button>
-        </div>
-        <div class="product-stars">★★★★★</div>
-      </div>
-    </div>
-    <div class="product-card reveal reveal-delay-2">
-      <div class="product-img-wrap">
-        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=700&q=80" alt="Monaco Accent Chair"/>
-        <span class="product-badge new">New</span>
-        <button class="product-wishlist">♡</button>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Chairs</div>
-        <div class="product-name">Monaco Accent Chair</div>
-        <div class="product-desc">Bouclé fabric with walnut wood legs. Ergonomic &amp; chic.</div>
-        <div class="product-footer">
-          <div><span class="product-price">PKR 38,000</span></div>
-          <button class="btn-add">Add to Cart</button>
-        </div>
-        <div class="product-stars">★★★★★</div>
-      </div>
-    </div>
-    <div class="product-card reveal reveal-delay-3">
-      <div class="product-img-wrap">
-        <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=700&q=80" alt="Aurora Floor Lamp"/>
-        <span class="product-badge sale">Sale</span>
-        <button class="product-wishlist">♡</button>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Lighting</div>
-        <div class="product-name">Aurora Floor Lamp</div>
-        <div class="product-desc">Brass finish with marble base. Dimmable warm LED included.</div>
-        <div class="product-footer">
-          <div><span class="product-price">PKR 22,000</span><span class="product-price-old">PKR 28,000</span></div>
-          <button class="btn-add">Add to Cart</button>
-        </div>
-        <div class="product-stars">★★★★☆</div>
-      </div>
-    </div>
-    <div class="product-card reveal reveal-delay-1">
-      <div class="product-img-wrap">
-        <img src="https://images.unsplash.com/photo-1530018352490-c6eef07fd7d0?w=700&q=80" alt="Nero Dining Table"/>
-        <button class="product-wishlist">♡</button>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Tables</div>
-        <div class="product-name">Nero Dining Table</div>
-        <div class="product-desc">Solid sheesham wood, seats 6–8. Hand-finished black stain.</div>
-        <div class="product-footer">
-          <div><span class="product-price">PKR 65,000</span></div>
-          <button class="btn-add">Add to Cart</button>
-        </div>
-        <div class="product-stars">★★★★★</div>
-      </div>
-    </div>
-    <div class="product-card reveal reveal-delay-2">
-      <div class="product-img-wrap">
-        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700&q=80" alt="Cloud King Bed"/>
-        <span class="product-badge">Bestseller</span>
-        <button class="product-wishlist">♡</button>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Beds</div>
-        <div class="product-name">Cloud King Bed</div>
-        <div class="product-desc">Upholstered headboard, storage drawers. King &amp; Queen sizes.</div>
-        <div class="product-footer">
-          <div><span class="product-price">PKR 95,000</span><span class="product-price-old">PKR 1,20,000</span></div>
-          <button class="btn-add">Add to Cart</button>
-        </div>
-        <div class="product-stars">★★★★★</div>
-      </div>
-    </div>
-    <div class="product-card reveal reveal-delay-3">
-      <div class="product-img-wrap">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Ceramic Vase Set"/>
-        <span class="product-badge new">New</span>
-        <button class="product-wishlist">♡</button>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Decor</div>
-        <div class="product-name">Ceramic Vase Set</div>
-        <div class="product-desc">Hand-thrown matte ceramic. Set of 3 varying heights.</div>
-        <div class="product-footer">
-          <div><span class="product-price">PKR 8,500</span></div>
-          <button class="btn-add">Add to Cart</button>
-        </div>
-        <div class="product-stars">★★★★☆</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="pricing" style="background:var(--dark2)">
-  <div class="section-header reveal">
-    <span class="section-tag">Transparent Pricing</span>
-    <h2 class="section-title">Budget-Friendly Packages</h2>
-    <p class="section-sub">Complete room setups — from a single sofa to a full home</p>
-    <div class="gold-divider"></div>
-  </div>
-  <div class="pricing-grid">
-    <div class="price-card reveal reveal-delay-1">
-      <div class="price-tier">Starter</div>
-      <div class="price-amount"><sup>PKR </sup>25,000</div>
-      <div class="price-period">per room setup</div>
-      <div class="price-desc">Perfect for a single room refresh with essential furniture pieces.</div>
-      <ul class="price-features">
-        <li>1 Sofa or Bed</li>
-        <li>1 Side Table</li>
-        <li>1 Lighting Piece</li>
-        <li>Free Delivery (Karachi)</li>
-        <li>1-Year Warranty</li>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-top">Trends<span>.</span></div>
+      <div class="nav-logo-line"></div>
+      <div class="nav-logo-bottom">Furniture</div>
+    </a>
+    <div class="nav-center">
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#showcase">New Arrivals</a></li>
+        <li><a href="#rooms">Collections</a></li>
+        <li><a href="#trending">Shop</a></li>
+        <li><a href="#footer">About</a></li>
       </ul>
-      <button class="btn-price" onclick="scrollToContact('Starter')">Choose Starter</button>
-    </div>
-    <div class="price-card featured reveal reveal-delay-2">
-      <div class="price-tier">Premium</div>
-      <div class="price-amount"><sup>PKR </sup>75,000</div>
-      <div class="price-period">per room setup</div>
-      <div class="price-desc">Our most popular package — a fully furnished living room in one go.</div>
-      <ul class="price-features">
-        <li>Sectional Sofa Set</li>
-        <li>Coffee &amp; Side Tables</li>
-        <li>Floor &amp; Table Lamps</li>
-        <li>Decor Items Included</li>
-        <li>Free Delivery Nationwide</li>
-        <li>2-Year Warranty</li>
-        <li>Interior Styling Advice</li>
-      </ul>
-      <button class="btn-price" onclick="scrollToContact('Premium')">Choose Premium</button>
-    </div>
-    <div class="price-card reveal reveal-delay-3">
-      <div class="price-tier">Luxury</div>
-      <div class="price-amount"><sup>PKR </sup>1,80,000</div>
-      <div class="price-period">full home setup</div>
-      <div class="price-desc">Complete home furnishing with bespoke custom pieces and white-glove service.</div>
-      <ul class="price-features">
-        <li>All Rooms Covered</li>
-        <li>Custom Dimensions</li>
-        <li>Premium Imported Fabrics</li>
-        <li>Interior Designer Visit</li>
-        <li>Priority Delivery</li>
-        <li>5-Year Warranty</li>
-        <li>Post-installation Support</li>
-      </ul>
-      <button class="btn-price" onclick="scrollToContact('Luxury')">Choose Luxury</button>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="gallery">
-  <div class="section-header reveal">
-    <span class="section-tag">Real Homes</span>
-    <h2 class="section-title">Customer Spaces</h2>
-    <p class="section-sub">Stunning interiors crafted with our furniture — from real customers</p>
-    <div class="gold-divider"></div>
-  </div>
-  <div class="gallery-grid reveal">
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80" alt="Living room" style="min-height:420px"/>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80" alt="Bedroom"/>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=600&q=80" alt="Dining"/>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=600&q=80" alt="Study"/>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80" alt="Bedroom 2"/>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background:var(--dark2)">
-  <div class="section-header reveal">
-    <span class="section-tag">What Clients Say</span>
-    <h2 class="section-title">Loved by Thousands</h2>
-    <div class="gold-divider"></div>
-  </div>
-  <div class="testi-grid">
-    <div class="testi-card reveal reveal-delay-1">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">"The quality of the sofa we ordered is absolutely stunning. Delivery was fast and the team was so professional. Will definitely order again!"</div>
-      <div class="testi-author">
-        <img class="testi-avatar" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&q=80" alt="Ayesha"/>
-        <div><div class="testi-name">Ayesha Malik</div><div class="testi-loc">DHA, Karachi</div></div>
-      </div>
-    </div>
-    <div class="testi-card reveal reveal-delay-2">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">"Got the premium package for our new apartment — every piece was perfect. The gold accents matched our aesthetic exactly. Highly recommend!"</div>
-      <div class="testi-author">
-        <img class="testi-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&q=80" alt="Bilal"/>
-        <div><div class="testi-name">Bilal Ahmed</div><div class="testi-loc">Gulshan, Karachi</div></div>
-      </div>
-    </div>
-    <div class="testi-card reveal reveal-delay-3">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">"Custom bed with storage drawers — delivered exactly to our specs. The wood finish is gorgeous and the warranty gives real peace of mind."</div>
-      <div class="testi-author">
-        <img class="testi-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80" alt="Sara"/>
-        <div><div class="testi-name">Sara Qureshi</div><div class="testi-loc">Clifton, Karachi</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section contact-section" id="contact">
-  <div class="contact-wrap">
-    <div class="contact-info reveal">
-      <span class="section-tag">Get in Touch</span>
-      <h2>Let's Design<br>Your Dream Home</h2>
-      <p>Fill the form and we'll get back to you on WhatsApp within minutes. Tell us your needs and budget — we'll find the perfect fit for you.</p>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">📱</div>
-        <div><div class="contact-detail-text">WhatsApp &amp; Call</div><div class="contact-detail-val">0325-3548990</div></div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">📍</div>
-        <div><div class="contact-detail-text">Showroom</div><div class="contact-detail-val">Karachi, Pakistan</div></div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">🕙</div>
-        <div><div class="contact-detail-text">Open Hours</div><div class="contact-detail-val">Mon–Sat: 10am – 9pm</div></div>
-      </div>
-    </div>
-    <div class="form-card reveal reveal-delay-2">
-      <div class="form-title">Request a Quote</div>
-      <div class="form-sub">We'll reply on WhatsApp instantly ✅</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input class="form-input" id="f_name" type="text" placeholder="e.g. Ahmed Khan"/>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input class="form-input" id="f_phone" type="tel" placeholder="03XX-XXXXXXX"/>
+      <div class="search-wrap" id="sWrap">
+        <svg class="search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" class="search-input" id="sInput" placeholder="Search sofas…" autocomplete="off">
+        <div class="search-dd" id="sDD">
+          <div class="sr" onclick="closeSr()"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=80&h=80&fit=crop" alt=""><div><div class="sr-name">Velvet Cloud Sofa</div><div class="sr-price">$1,299</div></div></div>
+          <div class="sr" onclick="closeSr()"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=80&h=80&fit=crop" alt=""><div><div class="sr-name">Nordic Lounge Chair</div><div class="sr-price">$649</div></div></div>
+          <div class="sr" onclick="closeSr()"><img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=80&h=80&fit=crop" alt=""><div><div class="sr-name">Marble Dining Table</div><div class="sr-price">$2,199</div></div></div>
+          <div class="sr" onclick="closeSr()"><img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=80&h=80&fit=crop" alt=""><div><div class="sr-name">Platform Bed Frame</div><div class="sr-price">$999</div></div></div>
         </div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Interested Category</label>
-        <select class="form-select" id="f_category">
-          <option value="">Select a category…</option>
-          <option>Sofas &amp; Sectionals</option>
-          <option>Chairs &amp; Armchairs</option>
-          <option>Beds &amp; Bedroom Sets</option>
-          <option>Dining Tables &amp; Chairs</option>
-          <option>Lighting</option>
-          <option>Cupboards &amp; Wardrobes</option>
-          <option>Decor &amp; Accessories</option>
-          <option>Full Home Package</option>
-          <option>Custom / Bespoke Order</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Budget Range</label>
-        <select class="form-select" id="f_budget">
-          <option value="">Select your budget…</option>
-          <option>Under PKR 20,000</option>
-          <option>PKR 20,000 – 50,000</option>
-          <option>PKR 50,000 – 1,00,000</option>
-          <option>PKR 1,00,000 – 2,00,000</option>
-          <option>PKR 2,00,000 – 5,00,000</option>
-          <option>Above PKR 5,00,000</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Delivery City</label>
-        <select class="form-select" id="f_city">
-          <option value="">Select your city…</option>
-          <option>Karachi</option>
-          <option>Lahore</option>
-          <option>Islamabad</option>
-          <option>Rawalpindi</option>
-          <option>Faisalabad</option>
-          <option>Peshawar</option>
-          <option>Quetta</option>
-          <option>Hyderabad</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Package Preference</label>
-        <select class="form-select" id="f_package">
-          <option value="">Any preference?</option>
-          <option>Starter Package (PKR 25,000)</option>
-          <option>Premium Package (PKR 75,000)</option>
-          <option>Luxury Package (PKR 1,80,000)</option>
-          <option>Custom / Let me know options</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Additional Details</label>
-        <textarea class="form-textarea" id="f_msg" placeholder="Room size, colour preference, custom requirements…"></textarea>
-      </div>
-      <button class="btn-whatsapp" onclick="sendWhatsApp()">
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#fff"/><path d="M23 9C21.1 7.1 18.6 6 16 6 10.5 6 6 10.5 6 16c0 1.8.5 3.5 1.3 5L6 26l5.2-1.4C12.5 25.5 14.2 26 16 26c5.5 0 10-4.5 10-10 0-2.7-1-5.1-3-7z" fill="#25D366"/><path d="M20.8 18.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2s-.8 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-.9-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.3-.6-.4z" fill="#fff"/></svg>
-        Send via WhatsApp
+    </div>
+    <div class="nav-icons">
+      <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☾ Dark</button>
+      <button class="icon-btn" title="Wishlist">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="ibadge" id="wBadge" style="display:none">0</span>
+      </button>
+      <button class="icon-btn" title="Cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="ibadge" id="cBadge">0</span>
+      </button>
+      <button class="icon-btn" title="Account">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </button>
     </div>
   </div>
+</nav>
+
+<!-- HERO — full-bleed sofa photo with floating product cards -->
+<section class="hero" id="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">New Collection 2025</div>
+    <h1 class="hero-headline">Redefine Your<br><em>Living Space</em></h1>
+    <p class="hero-sub">Timeless craftsmanship meets modern sensibility. Pieces designed for the way you live — beautifully, intentionally.</p>
+    <div class="hero-actions">
+      <button class="btn-gold" onclick="document.getElementById('trending').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+      <button class="btn-ghost" onclick="document.getElementById('rooms').scrollIntoView({behavior:'smooth'})">Explore Collections</button>
+    </div>
+  </div>
+  <!-- Glass product cards floating on hero -->
+  <div class="hero-cards">
+    <div class="hcard" onclick="openModal(1)">
+      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=120&h=120&fit=crop" alt="">
+      <div class="hcard-info">
+        <div class="hcard-cat">Sofas</div>
+        <div class="hcard-name">Velvet Cloud Sofa</div>
+        <div class="hcard-price">from $1,299</div>
+      </div>
+      <button class="hcard-add" onclick="addCart(event,'Velvet Cloud Sofa')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+    </div>
+    <div class="hcard" onclick="openModal(2)">
+      <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=120&h=120&fit=crop" alt="">
+      <div class="hcard-info">
+        <div class="hcard-cat">Chairs</div>
+        <div class="hcard-name">Nordic Lounge Chair</div>
+        <div class="hcard-price">from $649</div>
+      </div>
+      <button class="hcard-add" onclick="addCart(event,'Nordic Lounge Chair')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+    </div>
+    <div class="hcard" onclick="openModal(3)">
+      <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=120&h=120&fit=crop" alt="">
+      <div class="hcard-info">
+        <div class="hcard-cat">Dining</div>
+        <div class="hcard-name">Marble Dining Table</div>
+        <div class="hcard-price">from $2,199</div>
+      </div>
+      <button class="hcard-add" onclick="addCart(event,'Marble Dining Table')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 
-<div class="newsletter">
-  <span class="section-tag" style="display:block;margin-bottom:10px">Stay Updated</span>
-  <h2>Get Exclusive Deals First</h2>
-  <p>Subscribe for new arrivals, seasonal sales &amp; interior inspiration</p>
-  <div class="newsletter-form">
-    <input class="newsletter-input" type="email" placeholder="Your email address"/>
-    <button class="btn-subscribe">Subscribe</button>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-grid">
+<!-- SHOWCASE STRIP — horizontal scroll of new arrivals -->
+<section class="showcase" id="showcase">
+  <div class="showcase-label">
     <div>
-      <div class="footer-logo">Trends Furniture</div>
-      <div class="footer-about">Premium furniture and home decor for contemporary Pakistani homes. Quality you can see, comfort you can feel — delivered to your door.</div>
-      <div class="social-links">
-        <a class="social-btn" href="#">f</a>
-        <a class="social-btn" href="#">in</a>
-        <a class="social-btn" href="#">ig</a>
-        <a class="social-btn" href="#">yt</a>
+      <div class="eyebrow rv" style="margin-bottom:.5rem;">New Arrivals</div>
+      <div class="sec-title rv">Just Landed</div>
+    </div>
+    <a href="#" class="link-arrow rv">View All <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="showcase-track" id="showcaseTrack"></div>
+</section>
+
+<!-- EDITORIAL SPLIT -->
+<section class="editorial">
+  <div class="ed-inner">
+    <div class="ed-img-stack rv">
+      <div class="ed-img-main">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&h=840&fit=crop" alt="Luxury interior">
+      </div>
+      <div class="ed-img-accent">
+        <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=400&h=400&fit=crop" alt="Coffee table">
+      </div>
+      <div class="ed-badge">
+        <div class="ed-badge-num">18</div>
+        <div class="ed-badge-lbl">Years of craft</div>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Shop</h4>
-      <ul>
-        <li><a href="#">Sofas</a></li>
-        <li><a href="#">Chairs</a></li>
-        <li><a href="#">Beds</a></li>
-        <li><a href="#">Tables</a></li>
-        <li><a href="#">Lighting</a></li>
-        <li><a href="#">Decor</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Story</a></li>
-        <li><a href="#">Showroom</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Help</h4>
-      <ul>
-        <li><a href="#">Delivery Info</a></li>
-        <li><a href="#">Returns Policy</a></li>
-        <li><a href="#">Warranty</a></li>
-        <li><a href="#">Custom Orders</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
+    <div>
+      <div class="eyebrow rv">Our Philosophy</div>
+      <h2 class="ed-title rv">Crafted for<br><em>Life's Most</em><br>Beautiful Moments</h2>
+      <p class="ed-body rv">Every piece in our collection is a collaboration between skilled artisans and visionary designers. We source only the finest materials — solid hardwoods, top-grain leathers, natural stones — to ensure furniture that ages with grace.</p>
+      <div class="ed-features rv">
+        <div class="ed-feat"><div class="ed-feat-dot"></div><div class="ed-feat-text">Handcrafted by master artisans in Italy &amp; Scandinavia</div></div>
+        <div class="ed-feat"><div class="ed-feat-dot"></div><div class="ed-feat-text">Sustainably sourced solid hardwood frames</div></div>
+        <div class="ed-feat"><div class="ed-feat-dot"></div><div class="ed-feat-text">5-year structural warranty on every piece</div></div>
+        <div class="ed-feat"><div class="ed-feat-dot"></div><div class="ed-feat-text">White-glove delivery &amp; professional in-home setup</div></div>
+      </div>
+      <div class="rv">
+        <button class="btn-gold" style="font-size:.78rem;" onclick="document.getElementById('trending').scrollIntoView({behavior:'smooth'})">Explore the Collection</button>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2025 Trends Furniture. All rights reserved.</div>
-    <div class="footer-cards">
-      <span class="payment-badge">JazzCash</span>
-      <span class="payment-badge">EasyPaisa</span>
-      <span class="payment-badge">Bank Transfer</span>
-      <span class="payment-badge">Cash on Delivery</span>
+</section>
+
+<!-- ROOM SCENES -->
+<section class="rooms" id="rooms">
+  <div class="rooms-inner">
+    <div class="section-header">
+      <div class="rv">
+        <div class="eyebrow">Curated Spaces</div>
+        <div class="sec-title">Shop by Room</div>
+      </div>
+      <a href="#" class="link-arrow rv">All Collections <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="rooms-grid">
+      <div class="room-card room-large rv">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=1100&fit=crop" alt="Living Room">
+        <div class="room-overlay"></div>
+        <div class="room-info">
+          <div class="room-tag">128 pieces</div>
+          <div class="room-title">Living Room</div>
+          <button class="room-btn">Shop Now <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+        <div class="room-card room-sm rv rv2">
+          <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=700&h=380&fit=crop" alt="Bedroom">
+          <div class="room-overlay"></div>
+          <div class="room-info">
+            <div class="room-tag">94 pieces</div>
+            <div class="room-title">Bedroom</div>
+            <button class="room-btn">Shop Now <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+        <div class="room-card room-sm rv rv3">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=700&h=380&fit=crop" alt="Office">
+          <div class="room-overlay"></div>
+          <div class="room-info">
+            <div class="room-tag">67 pieces</div>
+            <div class="room-title">Office</div>
+            <button class="room-btn">Shop Now <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+        <div class="room-card room-sm rv rv4">
+          <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=700&h=380&fit=crop" alt="Dining">
+          <div class="room-overlay"></div>
+          <div class="room-info">
+            <div class="room-tag">83 pieces</div>
+            <div class="room-title">Dining</div>
+            <button class="room-btn">Shop Now <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING PRODUCTS -->
+<section class="trending" id="trending">
+  <div class="trending-inner">
+    <div class="section-header">
+      <div class="rv">
+        <div class="eyebrow">Hand-Picked</div>
+        <div class="sec-title">Trending Right Now</div>
+      </div>
+      <a href="#" class="link-arrow rv">All Products <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="filter-bar rv">
+      <button class="filt active" onclick="filterProd('all',this)">All</button>
+      <button class="filt" onclick="filterProd('sofa',this)">Sofas</button>
+      <button class="filt" onclick="filterProd('chair',this)">Chairs</button>
+      <button class="filt" onclick="filterProd('table',this)">Tables</button>
+      <button class="filt" onclick="filterProd('bed',this)">Beds</button>
+      <button class="filt" onclick="filterProd('desk',this)">Desks</button>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- FULL-BLEED BANNER -->
+<section class="banner">
+  <div class="banner-bg"></div>
+  <div class="banner-inner">
+    <div class="banner-eyebrow">Limited Time</div>
+    <h2 class="banner-title">Up to 30% Off<br><em>Signature Collection</em></h2>
+    <p class="banner-sub">A curated selection of our most-loved pieces — now at exceptional value. Offer ends soon.</p>
+    <button class="btn-gold" onclick="document.getElementById('trending').scrollIntoView({behavior:'smooth'})">Shop the Sale</button>
+    <div class="banner-stats">
+      <div><div class="bstat-num">12K+</div><div class="bstat-label">Happy Clients</div></div>
+      <div><div class="bstat-num">850+</div><div class="bstat-label">Curated Products</div></div>
+      <div><div class="bstat-num">18yr</div><div class="bstat-label">Expert Craft</div></div>
+      <div><div class="bstat-num">4.9★</div><div class="bstat-label">Avg. Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="why-inner">
+    <div class="rv" style="position:relative;">
+      <div class="why-img-main">
+        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=700&h=880&fit=crop" alt="Craftsmanship">
+      </div>
+      <div class="why-float">
+        <div class="why-float-num">5yr</div>
+        <div class="why-float-text">Warranty Included</div>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow rv">Our Promise</div>
+      <h2 class="sec-title rv" style="margin-bottom:1rem;">Why Thousands Choose<br><span style="font-style:italic;color:var(--mocha);">Trends Furniture</span></h2>
+      <p class="rv" style="font-size:.93rem;color:var(--text-secondary);line-height:1.8;font-weight:300;max-width:430px;margin-bottom:.5rem;">We believe beautiful furniture should last a lifetime — and the experience of buying it should be just as exceptional.</p>
+      <div class="why-items">
+        <div class="wi rv"><div class="wi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="wi-title">Premium Quality</div><div class="wi-desc">Solid hardwood & top-grain materials built to last generations.</div></div>
+        <div class="wi rv rv2"><div class="wi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="wi-title">White-Glove Delivery</div><div class="wi-desc">Free delivery & professional in-home setup on orders over $999.</div></div>
+        <div class="wi rv rv3"><div class="wi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="wi-title">Fast Turnaround</div><div class="wi-desc">In-stock items delivered within 5–7 business days, guaranteed.</div></div>
+        <div class="wi rv rv4"><div class="wi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="wi-title">5-Year Warranty</div><div class="wi-desc">Full structural warranty — our confidence in what we build.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="test-inner">
+    <div class="section-header">
+      <div class="rv"><div class="eyebrow">Real Clients</div><div class="sec-title">Loved by Thousands</div></div>
+    </div>
+    <div class="test-grid">
+      <div class="tcard rv"><div class="tcard-stars">★★★★★</div><div class="tcard-quote">"The velvet sofa transformed my living room entirely. Every guest asks where I found it. Impeccable quality and the white-glove delivery was a dream."</div><div class="tcard-author"><div class="tcard-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt=""></div><div><div class="tcard-name">Sarah Malik</div><div class="tcard-role">Interior Designer, Dubai</div></div></div></div>
+      <div class="tcard rv rv2"><div class="tcard-stars">★★★★★</div><div class="tcard-quote">"Finally a furniture brand that understands modern living. The marble dining table is a work of art. Fast shipping, perfect packaging — exceeded every expectation."</div><div class="tcard-author"><div class="tcard-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt=""></div><div><div class="tcard-name">James Thornton</div><div class="tcard-role">Architect, London</div></div></div></div>
+      <div class="tcard rv rv3"><div class="tcard-stars">★★★★★</div><div class="tcard-quote">"Redecorated my entire home office with Trends pieces. The craftsmanship is unmatched and the 5-year warranty sealed the deal for me."</div><div class="tcard-author"><div class="tcard-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""></div><div><div class="tcard-name">Aisha Rahman</div><div class="tcard-role">Creative Director, Karachi</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="nl-inner rv">
+    <div class="nl-deco"></div><div class="nl-deco2"></div>
+    <div>
+      <div class="nl-eyebrow">Stay in the Loop</div>
+      <h2 class="nl-title">Get 15% Off<br>Your First Order</h2>
+      <p class="nl-sub">Subscribe for exclusive deals, new arrivals, interior inspiration and early access to seasonal sales.</p>
+    </div>
+    <div class="nl-form">
+      <input type="text" class="nl-input" placeholder="Your full name">
+      <input type="email" class="nl-input" id="nlEmail" placeholder="Your email address">
+      <button class="nl-btn" onclick="subscribe()">Claim My 15% Off</button>
+      <div class="nl-note">No spam, ever. Unsubscribe anytime.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="fbl">
+          <div class="fbl-top">Trends<span>.</span></div>
+          <div class="fbl-line"></div>
+          <div class="fbl-bottom">Furniture</div>
+        </div>
+        <p>Curating spaces that tell your story. Thoughtfully designed furniture for the modern home — built to last a lifetime.</p>
+        <div class="foot-social">
+          <div class="fsoc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <div class="fsoc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+          <div class="fsoc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.43.36a9 9 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.52 2.02-4.52 4.52 0 .36.04.7.11 1.03C7.69 5.37 4.07 3.6 1.64.96a4.52 4.52 0 0 0 1.4 6.03A4.5 4.5 0 0 1 .96 6.5v.06a4.52 4.52 0 0 0 3.63 4.43 4.54 4.54 0 0 1-2.04.08 4.52 4.52 0 0 0 4.22 3.14A9.07 9.07 0 0 1 0 15.54a12.8 12.8 0 0 0 6.92 2.03c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.17 9.17 0 0 0 23 3z"/></svg></div>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Shop</h4><a href="#">Living Room</a><a href="#">Bedroom</a><a href="#">Office</a><a href="#">Dining</a><a href="#">Outdoor</a><a href="#">New Arrivals</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Careers</a><a href="#">Press</a><a href="#">Sustainability</a><a href="#">Showrooms</a></div>
+      <div class="foot-col"><h4>Support</h4><a href="#">FAQ</a><a href="#">Shipping & Delivery</a><a href="#">Returns</a><a href="#">Warranty</a><a href="#">Contact Us</a></div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">© 2025 Trends Furniture. All rights reserved.</div>
+      <div class="foot-copy">Crafted with care &amp; precision.</div>
     </div>
   </div>
 </footer>
 
+<!-- QUICK VIEW MODAL -->
+<div class="overlay" id="overlay" onclick="handleOverlay(event)">
+  <div class="modal" id="modal">
+    <button class="m-close" onclick="closeModal()">✕</button>
+    <div class="modal-grid" id="modalGrid"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toastMsg">Item added to cart!</span></div>
+
 <script>
-const nav=document.getElementById('navbar');
-const backTop=document.getElementById('backTop');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('scrolled',window.scrollY>60);
-  backTop.classList.toggle('show',window.scrollY>400);
-});
-function animateCount(el,target,suffix){
-  let s=0;const step=target/60;
-  const t=setInterval(()=>{s+=step;if(s>=target){el.textContent=target+suffix;clearInterval(t);return;}el.textContent=Math.floor(s)+suffix;},25);
+const PRODS=[
+  {id:1,name:'Velvet Cloud Sofa',cat:'sofa',price:1299,old:1599,badge:'sale',img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=500&fit=crop',colors:['#8B7355','#C4B5A5','#2C2825','#2C4B6E'],desc:'Sink into pure comfort. Solid oak legs, high-density foam cushions and hand-stitched velvet upholstery. Available in 4 colours.'},
+  {id:2,name:'Nordic Lounge Chair',cat:'chair',price:649,old:null,badge:'new',img:'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=500&fit=crop',colors:['#F5F0E8','#8B7355','#2C2825'],desc:'Scandinavian simplicity meets modern comfort. Natural ash wood frame with premium sheepskin cushioning and 360° swivel.'},
+  {id:3,name:'Marble Dining Table',cat:'table',price:2199,old:2699,badge:'sale',img:'https://images.unsplash.com/photo-1549497538-303791108f95?w=400&h=500&fit=crop',colors:['#FFFFFF','#D4C8B5','#2C2825'],desc:'Carrara marble top on a matte black steel base. Seats six comfortably. A statement piece for every dining room.'},
+  {id:4,name:'Platform Bed Frame',cat:'bed',price:999,old:null,badge:null,img:'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&h=500&fit=crop',colors:['#8B7355','#2C2825','#F5F0E8'],desc:'Low-profile walnut veneer bed frame with integrated headboard and under-bed storage. King, Queen, Full.'},
+  {id:5,name:'Rattan Side Chair',cat:'chair',price:399,old:499,badge:'sale',img:'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=500&fit=crop',colors:['#C4B5A5','#8B7355'],desc:'Handwoven rattan seat on a solid beech frame. Lightweight and stackable — perfect for indoor or covered outdoor spaces.'},
+  {id:6,name:'Executive Desk',cat:'desk',price:1499,old:null,badge:'new',img:'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&h=500&fit=crop',colors:['#8B7355','#2C2825','#F5F0E8'],desc:'Solid oak desk with integrated cable management, hidden drawer and scratch-resistant surface. 180×80 cm.'},
+  {id:7,name:'Travertine Coffee Table',cat:'table',price:749,old:null,badge:null,img:'https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=400&h=500&fit=crop',colors:['#C9A96E','#8B7355','#2C2825'],desc:'Travertine stone top resting on a brushed brass base. A tactile, sculptural centrepiece for your living room.'},
+  {id:8,name:'Boucle Armchair',cat:'chair',price:879,old:null,badge:'new',img:'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=500&fit=crop',colors:['#F5F0E8','#D4C8B5','#C4B5A5'],desc:'Wrapped in luxurious boucle fabric with walnut dowel legs and solid sprung base. The coziest corner of any room.'}
+];
+
+const SHOWCASE=[
+  {img:'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=400&h=533&fit=crop',cat:'Armchairs',name:'Cashmere Accent Chair',price:'$729',badge:'new'},
+  {img:'https://images.unsplash.com/photo-1538688423619-a81d3f23454b?w=400&h=533&fit=crop',cat:'Sofas',name:'Linen 2-Seater Sofa',price:'$1,099',badge:'new'},
+  {img:'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=400&h=533&fit=crop',cat:'Lighting',name:'Brass Arc Floor Lamp',price:'$349',badge:null},
+  {img:'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&h=533&fit=crop',cat:'Tables',name:'Oak Side Table',price:'$249',badge:'top'},
+  {img:'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=533&fit=crop',cat:'Bedroom',name:'Linen Bedside Table',price:'$399',badge:null},
+  {img:'https://images.unsplash.com/photo-1589834390005-5d4d9a980b74?w=400&h=533&fit=crop',cat:'Storage',name:'Walnut Bookshelf',price:'$879',badge:'new'},
+];
+
+let cartCount=0,wishSet=new Set(),activeFilt='all';
+
+function renderShowcase(){
+  document.getElementById('showcaseTrack').innerHTML=SHOWCASE.map((s,i)=>`
+    <div class="scard rv rv${Math.min(i+1,4)}">
+      <img src="${s.img}" alt="${s.name}">
+      ${s.badge?`<div class="scard-badge b-${s.badge}">${s.badge}</div>`:''}
+      <div class="scard-body">
+        <div class="scard-cat">${s.cat}</div>
+        <div class="scard-name">${s.name}</div>
+        <div class="scard-row">
+          <div class="scard-price">${s.price}</div>
+          <button class="scard-btn" onclick="addCart(event,'${s.name}')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>`).join('');
+  observeRv();
 }
-setTimeout(()=>{
-  animateCount(document.getElementById('cnt1'),2500,'+');
-  animateCount(document.getElementById('cnt2'),800,'+');
-  animateCount(document.getElementById('cnt3'),7,'+');
-  animateCount(document.getElementById('cnt4'),12,'+');
-},1200);
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-function sendWhatsApp(){
-  const name=document.getElementById('f_name').value.trim()||'Not provided';
-  const phone=document.getElementById('f_phone').value.trim()||'Not provided';
-  const category=document.getElementById('f_category').value||'Not specified';
-  const budget=document.getElementById('f_budget').value||'Not specified';
-  const city=document.getElementById('f_city').value||'Not specified';
-  const pkg=document.getElementById('f_package').value||'Not specified';
-  const msg=document.getElementById('f_msg').value.trim()||'No additional details';
-  const text=`🛋️ *New Enquiry – Trends Furniture*\n\n👤 *Name:* ${name}\n📱 *Phone:* ${phone}\n\n🪑 *Category:* ${category}\n💰 *Budget:* ${budget}\n📦 *Package:* ${pkg}\n🏙️ *City:* ${city}\n\n📝 *Details:*\n${msg}\n\n_Sent via TrendsFurniture website_`;
-  window.open('https://wa.me/923253548990?text='+encodeURIComponent(text),'_blank');
+
+function renderProds(filt){
+  activeFilt=filt;
+  const items=filt==='all'?PRODS:PRODS.filter(p=>p.cat===filt);
+  document.getElementById('prodGrid').innerHTML=items.map((p,i)=>`
+    <div class="prod-card rv rv${Math.min(i%4+1,4)}">
+      <div class="prod-img-wrap">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onclick="openModal(${p.id})">
+        ${p.badge?`<div class="prod-badge b-${p.badge}">${p.badge}</div>`:''}
+        <div class="prod-actions">
+          <button class="pa-cart" onclick="addCart(event,'${p.name}')">Add to Cart</button>
+          <button class="pa-icon ${wishSet.has(p.id)?'wished':''}" onclick="toggleWish(event,${p.id})">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="${wishSet.has(p.id)?'#e05252':'none'}" stroke="${wishSet.has(p.id)?'#e05252':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <button class="pa-icon" onclick="openModal(${p.id})">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="prod-cat">${p.cat}</div>
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-price-row">
+        <div class="prod-price">$${p.price.toLocaleString()}</div>
+        ${p.old?`<div class="prod-old">$${p.old.toLocaleString()}</div>`:''}
+      </div>
+    </div>`).join('');
+  observeRv();
 }
-function scrollToContact(pkg){
-  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
-  setTimeout(()=>{
-    const sel=document.getElementById('f_package');
-    for(let i=0;i<sel.options.length;i++){if(sel.options[i].text.includes(pkg)){sel.selectedIndex=i;break;}}
-  },700);
+
+function filterProd(cat,btn){
+  document.querySelectorAll('.filt').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProds(cat);
 }
-document.querySelectorAll('.product-wishlist').forEach(btn=>{
-  btn.addEventListener('click',function(e){
-    e.stopPropagation();
-    this.textContent=this.textContent==='♡'?'♥':'♡';
-    this.style.color=this.textContent==='♥'?'#c94c4c':'';
-  });
-});
-document.querySelectorAll('.btn-add').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    const o=this.textContent;
-    this.textContent='Added ✓';this.style.background='var(--gold)';this.style.color='var(--dark)';
-    setTimeout(()=>{this.textContent=o;this.style.background='';this.style.color='';},2000);
-  });
-});
+
+function addCart(e,name){
+  if(e)e.stopPropagation();
+  cartCount++;
+  document.getElementById('cBadge').textContent=cartCount;
+  showToast(`${name} added to cart!`);
+}
+
+function toggleWish(e,id){
+  if(e)e.stopPropagation();
+  wishSet.has(id)?wishSet.delete(id):wishSet.add(id);
+  const wb=document.getElementById('wBadge');
+  wb.textContent=wishSet.size;
+  wb.style.display=wishSet.size?'flex':'none';
+  renderProds(activeFilt);
+}
+
+function openModal(id){
+  const p=PRODS.find(x=>x.id===id);
+  if(!p)return;
+  document.getElementById('modalGrid').innerHTML=`
+    <div class="modal-img-side"><img src="${p.img}" alt="${p.name}"></div>
+    <div class="modal-info-side">
+      <div class="modal-cat">${p.cat}</div>
+      <div class="modal-title">${p.name}</div>
+      <div class="modal-price">$${p.price.toLocaleString()}</div>
+      <div class="modal-desc">${p.desc}</div>
+      <div class="modal-clr-lbl">Available Colours</div>
+      <div class="swatches">${p.colors.map((c,i)=>`<div class="sw${i===0?' active':''}" style="background:${c}" onclick="this.closest('.swatches').querySelectorAll('.sw').forEach(s=>s.classList.remove('active'));this.classList.add('active')"></div>`).join('')}</div>
+      <div class="modal-actions">
+        <button class="m-add" onclick="addCart(null,'${p.name}');closeModal()">Add to Cart — $${p.price.toLocaleString()}</button>
+        <button class="m-wish${wishSet.has(p.id)?' wished':''}" onclick="toggleWish(null,${p.id});this.classList.toggle('wished')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="${wishSet.has(p.id)?'#e05252':'none'}" stroke="${wishSet.has(p.id)?'#e05252':'currentColor'}" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+    </div>`;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow='';}
+function handleOverlay(e){if(e.target===document.getElementById('overlay'))closeModal();}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t=setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+function toggleTheme(){
+  const h=document.documentElement;
+  const d=h.dataset.theme==='dark';
+  h.dataset.theme=d?'light':'dark';
+  document.getElementById('themeBtn').textContent=d?'☾ Dark':'☀ Light';
+}
+
+const phs=['Search sofas…','Looking for chairs?','Find dining tables…','Explore bed frames…','Discover office desks…'];
+let phI=0;
+const sInput=document.getElementById('sInput');
+setInterval(()=>{sInput.setAttribute('placeholder',phs[phI=(phI+1)%phs.length]);},2600);
+sInput.addEventListener('input',function(){document.getElementById('sDD').classList.toggle('open',this.value.length>0);});
+sInput.addEventListener('focus',function(){if(this.value.length>0)document.getElementById('sDD').classList.add('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('sWrap').contains(e.target))closeSr();});
+function closeSr(){document.getElementById('sDD').classList.remove('open');sInput.value='';}
+
+function subscribe(){
+  const e=document.getElementById('nlEmail');
+  if(e.value&&e.value.includes('@')){showToast('Subscribed! Your 15% off code is on its way.');document.querySelectorAll('.nl-input').forEach(i=>i.value='');}
+}
+
+function observeRv(){
+  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.rv:not(.on)').forEach(el=>io.observe(el));
+}
+
+renderShowcase();
+renderProds('all');
+observeRv();
 </script>
 </body>
 </html>
